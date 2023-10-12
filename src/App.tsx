@@ -1,10 +1,12 @@
+import { Home } from 'pages';
+
 import { VantaBackground } from 'components';
 
 function App() {
   return (
     <>
       <VantaBackground />
-      <h1>eeee</h1>
+      <Home />
     </>
   );
 }
