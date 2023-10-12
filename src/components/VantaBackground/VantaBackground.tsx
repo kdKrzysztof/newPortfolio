@@ -2,12 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import WAVES from 'vanta/dist/vanta.waves.min';
 
+import { useAppSelector } from 'hooks/reduxHooks';
+
+import { dark, light } from 'data/ThemeProperties';
+
 const VantaBackground = () => {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
   const sectionRef = useRef(null);
-
+  const themeColor = useAppSelector((state) => state.theme);
   useEffect(() => {
-    if (!vantaEffect) {
+    if (vantaEffect || themeColor) {
       setVantaEffect(
         WAVES({
           THREE: THREE,
@@ -19,11 +23,11 @@ const VantaBackground = () => {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 2.0,
-          shininess: 25.0,
+          shininess: 0,
           waveHeight: 4.0,
           waveSpeed: 1.0,
           zoom: 1.75,
-          color: '#171c22'
+          color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
         })
       );
     }
@@ -33,12 +37,10 @@ const VantaBackground = () => {
         vantaEffect.destroy();
       }
     };
-  }, [vantaEffect]);
+  }, [themeColor]);
 
   return (
-    <div
-      ref={sectionRef}
-      style={{ position: 'absolute', width: '100vw', height: '100vh', opacity: '20%' }}></div>
+    <div ref={sectionRef} style={{ position: 'absolute', width: '100vw', height: '100vh' }}></div>
   );
 };
 
