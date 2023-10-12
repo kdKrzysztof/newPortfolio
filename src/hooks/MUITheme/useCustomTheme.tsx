@@ -1,8 +1,9 @@
 import { PaletteMode, createTheme, responsiveFontSizes } from '@mui/material';
-import { dark, light } from '@mui/material/styles/createPalette';
 import { useEffect, useMemo } from 'react';
 
 import { useAppSelector } from 'hooks/reduxHooks';
+
+import { dark, light } from 'data/ThemeProperties';
 
 const useCreateTheme = (themeColorState: PaletteMode) => {
   const theme = useMemo(

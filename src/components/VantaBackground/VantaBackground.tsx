@@ -38,7 +38,7 @@ const VantaBackground = () => {
   return (
     <div
       ref={sectionRef}
-      style={{ position: 'absolute', width: '100vw', height: '100vh', opacity: '40%' }}></div>
+      style={{ position: 'absolute', width: '100vw', height: '100vh', opacity: '20%' }}></div>
   );
 };
 

@@ -1,7 +1,9 @@
 import type { PaletteOptions } from '@mui/material';
 
 const light: PaletteOptions = {
-  HomeBackground: 'rgba(0, 0, 0, 0.1)'
+  background: {
+    default: 'rgba(0, 0, 0, 0.2)'
+  }
 } as PaletteOptions;
 
 export default light;

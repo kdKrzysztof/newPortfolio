@@ -7,6 +7,8 @@ import { VantaBackground } from 'components';
 
 import { useCustomTheme } from 'hooks';
 
+import ChangeThemeButton from './components/ChangeThemeButton';
+
 function App() {
   const theme = useCustomTheme();
 
@@ -14,6 +16,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <VantaBackground />
+      <ChangeThemeButton />
       <Home />
     </ThemeProvider>
   );
