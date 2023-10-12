@@ -1,4 +1,3 @@
-import type { PaletteOptions } from '@mui/material';
 import CustomPaletteOptions from './CustomPalette.interface';
 
 const light: CustomPaletteOptions = {
