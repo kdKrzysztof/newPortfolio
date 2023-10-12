@@ -10,8 +10,9 @@ const VantaBackground = () => {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
   const sectionRef = useRef(null);
   const themeColor = useAppSelector((state) => state.theme);
+
   useEffect(() => {
-    if (vantaEffect || themeColor) {
+    if (!vantaEffect) {
       setVantaEffect(
         WAVES({
           THREE: THREE,
@@ -26,17 +27,16 @@ const VantaBackground = () => {
           shininess: 0,
           waveHeight: 4.0,
           waveSpeed: 1.0,
-          zoom: 1.75,
           color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
         })
       );
     }
 
-    return () => {
-      if (vantaEffect) {
-        vantaEffect.destroy();
-      }
-    };
+    if (vantaEffect) {
+      vantaEffect.setOptions({
+        color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
+      });
+    }
   }, [themeColor]);
 
   return (
