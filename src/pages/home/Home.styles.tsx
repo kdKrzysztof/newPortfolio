@@ -1,4 +1,4 @@
-import { Box, Hidden, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 export const HomeContainer = styled(Box)({
   display: 'flex',

@@ -1,4 +1,3 @@
-import { PaletteMode } from '@mui/material';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = false;
@@ -7,10 +6,10 @@ const isLoadingAnimSlice = createSlice({
   name: 'isLoadingAnimation',
   initialState,
   reducers: {
-    animationOn: (state) => {
+    animationOn: () => {
       return true;
     },
-    animationOff: (state) => {
+    animationOff: () => {
       return false;
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useAppSelector } from 'src/hooks/reduxHooks';
 
@@ -8,8 +8,6 @@ import { LoadingPageContainer } from './LoadingPage.styles';
 
 const LoadingPage = () => {
   const isAnimationRunning = useAppSelector((state) => state.isLoadingAnimationRunning);
-
-  console.log(isAnimationRunning);
 
   useEffect(() => {
     if (isAnimationRunning) {

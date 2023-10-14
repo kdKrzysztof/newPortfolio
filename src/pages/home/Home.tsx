@@ -1,8 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { LoadingLogo } from 'src/components';
-
 import LoadingPage from '../loadingPage';
 import { HomeContainer } from './Home.styles';
 

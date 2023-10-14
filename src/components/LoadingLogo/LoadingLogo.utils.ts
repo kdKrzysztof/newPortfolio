@@ -15,13 +15,17 @@ const useLoadingControls = () => {
   useEffect(() => {
     const animate = async () => {
       controls.set('initial');
+
       setSpeedup(false);
       dispatch(animationOn());
+
       await controls.start('drawOutline');
       setSpeedup(true);
       await controls.start('shrinkToCenter');
+
       dispatch(animationOff());
       delayCode(100);
+      
       animate();
     };
     animate();
