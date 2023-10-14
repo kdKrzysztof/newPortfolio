@@ -5,7 +5,7 @@ export const StyledSVG = styled(motion.svg)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '200px',
+  width: '300px',
   overflow: 'visible',
   stroke: '#00ADB5',
   strokeWidth: 5,
