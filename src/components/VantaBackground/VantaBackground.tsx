@@ -19,7 +19,7 @@ const VantaBackground = () => {
         WAVES({
           THREE: THREE,
           el: sectionRef.current,
-          mouseControls: true,
+          mouseControls: false,
           touchControls: false,
           gyroControls: false,
           minHeight: 200.0,
