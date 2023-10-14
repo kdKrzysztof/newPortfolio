@@ -15,7 +15,7 @@ const ChangeThemeButton = () => {
       <IconButton
         onClick={() => dispatch(toggleTheme())}
         color="inherit"
-        sx={{ position: 'absolute', top: '1%', right: '1%' }}>
+        sx={{ position: 'absolute', top: '1%', right: '1%', zIndex: '1' }}>
         {themeColor === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
     </Tooltip>

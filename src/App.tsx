@@ -3,19 +3,15 @@ import { CssBaseline } from '@mui/material';
 
 import { Home } from 'pages';
 
-import { VantaBackground } from 'components';
-
 import { useCustomTheme } from 'hooks';
 
 import ChangeThemeButton from './components/ChangeThemeButton';
 
 function App() {
   const theme = useCustomTheme();
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <VantaBackground />
       <ChangeThemeButton />
       <Home />
     </ThemeProvider>
