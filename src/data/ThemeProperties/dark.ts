@@ -4,7 +4,7 @@ const dark: CustomPaletteOptions = {
   background: {
     default: 'rgba(0, 0, 0, 0.8)'
   },
-  VantaBackgroundColor: 'rgb(25, 25, 25)'
+  VantaBackgroundColor: '#171c22'
 } as CustomPaletteOptions;
 
 export default dark;
