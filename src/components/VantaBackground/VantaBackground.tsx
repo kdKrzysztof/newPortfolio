@@ -6,6 +6,8 @@ import { useAppSelector } from 'hooks/reduxHooks';
 
 import { dark, light } from 'data/ThemeProperties';
 
+import { StyledBox } from './VantaBackground.styles';
+
 const VantaBackground = () => {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
   const sectionRef = useRef(null);
@@ -17,14 +19,14 @@ const VantaBackground = () => {
         WAVES({
           THREE: THREE,
           el: sectionRef.current,
-          mouseControls: false,
+          mouseControls: true,
           touchControls: false,
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
           scale: 1.0,
-          scaleMobile: 2.0,
-          shininess: 0,
+          scaleMobile: 3.0,
+          shininess: 5,
           waveHeight: 4.0,
           waveSpeed: 1.0,
           color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
@@ -39,9 +41,7 @@ const VantaBackground = () => {
     }
   }, [themeColor]);
 
-  return (
-    <div ref={sectionRef} style={{ position: 'absolute', width: '100vw', height: '100vh' }}></div>
-  );
+  return <StyledBox ref={sectionRef} />;
 };
 
 export default VantaBackground;
