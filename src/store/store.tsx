@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import isLoadingAnimSlice from './reducers/isLoadingAnimSlice';
 import themeSlice from './reducers/themeSlice';
 
 export const store = configureStore({
   reducer: {
-    theme: themeSlice
+    theme: themeSlice,
+    isLoadingAnimationRunning: isLoadingAnimSlice
   }
 });
 
