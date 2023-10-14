@@ -6,7 +6,8 @@ import { AnimationSequence } from './data/animationSequence';
 
 const LoadingIcon = () => {
   const { controls, SpeedUp } = useLoadingControls();
-
+  const normalDuration = 3;
+  const fasterDuriation = 0.8;
   return (
     <StyledSVG viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
       <motion.path
@@ -16,7 +17,9 @@ const LoadingIcon = () => {
         initial="initial"
         animate={controls}
         transition={{
-          default: SpeedUp ? { duration: 3, ease: 'easeInOut' } : { duration: 1, ease: 'easeInOut' }
+          default: SpeedUp
+            ? { duration: normalDuration, ease: 'easeInOut' }
+            : { duration: fasterDuriation, ease: 'easeInOut' }
         }}
       />
     </StyledSVG>

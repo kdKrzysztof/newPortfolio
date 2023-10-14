@@ -23,7 +23,7 @@ const useLoadingControls = () => {
     await controls.start('shrinkToCenter');
 
     dispatch(animationOff());
-    delayCode(100);
+    await delayCode(100);
 
     animate();
   };
