@@ -12,24 +12,25 @@ const useLoadingControls = () => {
   const controls = useAnimation();
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    const animate = async () => {
-      controls.set('initial');
+  const animate = async () => {
+    controls.set('initial');
 
-      setSpeedup(false);
-      dispatch(animationOn());
+    setSpeedup(false);
+    dispatch(animationOn());
 
-      await controls.start('drawOutline');
-      setSpeedup(true);
-      await controls.start('shrinkToCenter');
+    await controls.start('drawOutline');
+    setSpeedup(true);
+    await controls.start('shrinkToCenter');
 
-      dispatch(animationOff());
-      delayCode(100);
-      
-      animate();
-    };
+    dispatch(animationOff());
+    delayCode(100);
+
     animate();
-  }, [controls]);
+  };
+
+  useEffect(() => {
+    animate();
+  }, [controls, dispatch]);
 
   return { controls, SpeedUp };
 };

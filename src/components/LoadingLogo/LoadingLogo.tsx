@@ -16,10 +16,7 @@ const LoadingIcon = () => {
         initial="initial"
         animate={controls}
         transition={{
-          default: SpeedUp
-            ? { duration: 3, ease: 'easeInOut' }
-            : { duration: 1, ease: 'easeInOut' },
-          delay: 0.5
+          default: SpeedUp ? { duration: 3, ease: 'easeInOut' } : { duration: 1, ease: 'easeInOut' }
         }}
       />
     </StyledSVG>
