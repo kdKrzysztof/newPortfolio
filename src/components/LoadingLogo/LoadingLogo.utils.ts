@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { useAppDispatch } from 'hooks/reduxHooks';
 
-import { animationOff, animationOn } from 'store/reducers/isLoadingAnimSlice';
+import { animationFinished } from 'store/reducers/isLoadingAnimSlice';
 
 import delayCode from 'utils/delayCode';
 
@@ -16,16 +16,15 @@ const useLoadingControls = () => {
     controls.set('initial');
 
     setSpeedup(false);
-    dispatch(animationOn());
-
     await controls.start('drawOutline');
-    setSpeedup(true);
-    await controls.start('shrinkToCenter');
 
-    dispatch(animationOff());
+    setSpeedup(true);
+    await controls.start('shrinkStroke');
+
+    dispatch(animationFinished());
     await delayCode(100);
 
-    animate();
+    // animate(); // recursive loading functions
   };
 
   useEffect(() => {
