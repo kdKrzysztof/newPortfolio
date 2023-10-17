@@ -1,19 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = false;
+const initialState = {
+  pause: false,
+  animationFinished: false
+};
 
 const isLoadingAnimSlice = createSlice({
   name: 'isLoadingAnimation',
   initialState,
   reducers: {
-    animationOn: () => {
-      return true;
+    animationUnpause: (state) => {
+      state.pause = false;
     },
-    animationOff: () => {
-      return false;
+    animationPause: (state) => {
+      state.pause = true;
+    },
+    animationFinished: (state) => {
+      state.animationFinished = true;
     }
   }
 });
 
-export const { animationOn, animationOff } = isLoadingAnimSlice.actions;
+export const { animationUnpause, animationPause, animationFinished } = isLoadingAnimSlice.actions;
 export default isLoadingAnimSlice.reducer;

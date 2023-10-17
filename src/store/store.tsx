@@ -6,7 +6,7 @@ import themeSlice from './reducers/themeSlice';
 export const store = configureStore({
   reducer: {
     theme: themeSlice,
-    isLoadingAnimationRunning: isLoadingAnimSlice
+    isLoadingAnimationRunning: isLoadingAnimSlice,
   }
 });
 
