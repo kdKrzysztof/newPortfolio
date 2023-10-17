@@ -5,7 +5,7 @@ const light: PaletteOptions = {
     default: 'rgba(255, 255, 255)'
   },
   NavbarZindex: 2,
-  AppbarBackground: '',
+  AppbarBackground: 'rgba(12, 15, 18, .25)',
   VantaBackgroundColor: 'rgb(155, 155, 155)'
 } as PaletteOptions;
 
