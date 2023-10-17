@@ -1,5 +1,6 @@
-import type { PaletteOptions } from '@mui/material';
+import type { Palette } from '@mui/material';
 
-export default interface CustomPaletteOptions extends PaletteOptions {
+export default interface CustomPaletteOptions extends Palette {
   VantaBackgroundColor: string;
+  ToolbarBackground: string;
 }

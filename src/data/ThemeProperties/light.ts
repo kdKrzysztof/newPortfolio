@@ -1,10 +1,11 @@
-import CustomPaletteOptions from './CustomPalette.interface';
+import type { PaletteOptions } from '@mui/material';
 
-const light: CustomPaletteOptions = {
+const light: PaletteOptions = {
   background: {
     default: 'rgba(255, 255, 255)'
   },
+  ToolbarBackground: '',
   VantaBackgroundColor: 'rgb(155, 155, 155)'
-} as CustomPaletteOptions;
+} as PaletteOptions;
 
 export default light;
