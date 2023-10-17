@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = (localStorage.getItem('themeColor') as PaletteMode) ?? 'light';
 
 const themeSlice = createSlice({
-  name: 'themeColor',
+  name: 'toggleTheme',
   initialState,
   reducers: {
     toggleTheme: (state) => {
