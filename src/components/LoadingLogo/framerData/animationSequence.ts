@@ -1,6 +1,6 @@
 import type { Variants } from 'framer-motion';
 
-export const AnimationSequence: Variants = {
+export const LoadingLogoAnimationSequence: Variants = {
   initial: {
     opacity: 1,
     pathLength: 0,
@@ -14,9 +14,11 @@ export const AnimationSequence: Variants = {
     opacity: 1,
     pathLength: 1,
     scale: 1
-    // fill: 'rgba(0,173,181,0.1)'
   },
-  shrinkToCenter: {
+  shrinkStroke: {
+    strokeWidth: 0
+  },
+  shrinkToCenterRotate: {
     scale: 0.3,
     pathLength: 1,
     opacity: 0,
