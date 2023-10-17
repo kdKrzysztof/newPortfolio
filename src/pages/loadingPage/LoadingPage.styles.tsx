@@ -8,6 +8,6 @@ export const LoadingPageContainer = styled(motion.div)(({ theme }) => ({
   alignItems: 'center',
   width: '100vw',
   height: '100vh',
-  zIndex: '10',
+  zIndex: '99',
   backgroundColor: theme.palette.background.default
 }));

@@ -4,7 +4,8 @@ const light: PaletteOptions = {
   background: {
     default: 'rgba(255, 255, 255)'
   },
-  ToolbarBackground: '',
+  NavbarZindex: 2,
+  AppbarBackground: '',
   VantaBackgroundColor: 'rgb(155, 155, 155)'
 } as PaletteOptions;
 

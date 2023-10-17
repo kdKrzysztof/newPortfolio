@@ -1,18 +1,19 @@
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 
-import { Home } from 'pages';
+import { Home, LoadingPage } from 'pages';
 
 import { useCustomTheme } from 'hooks';
 
-import ChangeThemeButton from './components/ChangeThemeButton';
+import { Navbar } from './components';
 
 function App() {
   const theme = useCustomTheme();
   return (
     <ThemeProvider theme={theme}>
+      <LoadingPage />
       <CssBaseline />
-      <ChangeThemeButton />
+      <Navbar />
       <Home />
     </ThemeProvider>
   );
