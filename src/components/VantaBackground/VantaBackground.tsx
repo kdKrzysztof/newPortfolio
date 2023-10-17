@@ -24,11 +24,11 @@ const VantaBackground = () => {
           gyroControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
-          scale: 1.0,
+          scale: 2.0,
           scaleMobile: 3.0,
           shininess: 5,
-          waveHeight: 4.0,
-          waveSpeed: 1.0,
+          waveHeight: 6.0,
+          waveSpeed: 0.5,
           color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
         })
       );
