@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import WAVES from 'vanta/dist/vanta.waves.min';
 
-import CustomPaletteOptions from 'src/data/ThemeProperties/CustomPalette.interface';
-
 import { useAppSelector } from 'hooks/reduxHooks';
 
 import { dark, light } from 'data/ThemeProperties';
@@ -14,9 +12,6 @@ const VantaBackground = () => {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
   const sectionRef = useRef(null);
   const themeColor = useAppSelector((state) => state.theme);
-
-  const darkTheme = dark as CustomPaletteOptions;
-  const lightTheme = light as CustomPaletteOptions;
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -34,16 +29,14 @@ const VantaBackground = () => {
           shininess: 5,
           waveHeight: 6.0,
           waveSpeed: 0.5,
-          color:
-            themeColor === 'dark' ? darkTheme.VantaBackgroundColor : lightTheme.VantaBackgroundColor
+          color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
         })
       );
     }
 
     if (vantaEffect) {
       vantaEffect.setOptions({
-        color:
-          themeColor === 'dark' ? darkTheme.VantaBackgroundColor : lightTheme.VantaBackgroundColor
+        color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
       });
     }
   }, [themeColor]);

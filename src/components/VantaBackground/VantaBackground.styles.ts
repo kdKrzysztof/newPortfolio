@@ -5,6 +5,6 @@ export const StyledBox = styled(Box)({
   position: 'absolute',
   width: '100%',
   height: '100%',
-  opacity: '15%',
+  opacity: '25%',
   zIndex: '-1'
 });
