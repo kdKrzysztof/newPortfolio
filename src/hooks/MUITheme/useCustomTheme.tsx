@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 
 import { useAppSelector } from 'hooks/reduxHooks';
 
-import { dark, light } from 'data/ThemeProperties';
+import { dark, globalStyleProps, light } from 'data/ThemeProperties';
 
 const useCreateTheme = (themeColorState: PaletteMode) => {
   const theme = useMemo(
@@ -12,7 +12,8 @@ const useCreateTheme = (themeColorState: PaletteMode) => {
         palette: {
           mode: themeColorState,
           ...(themeColorState === 'light' ? light : dark)
-        }
+        },
+        ...globalStyleProps
       }),
     [themeColorState]
   );
