@@ -1,10 +1,4 @@
-import { AppBar, Toolbar, styled } from '@mui/material';
-
-export const StyledToolbar = styled(Toolbar)(() => ({
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  width: '80%'
-}));
+import { AppBar, Grid, styled } from '@mui/material';
 
 export const StyledAppbar = styled(AppBar)(({ theme }) => ({
   alignItems: 'center',
@@ -14,4 +8,10 @@ export const StyledAppbar = styled(AppBar)(({ theme }) => ({
   zIndex: theme.palette.NavbarZindex,
   paddingTop: 10,
   paddingBottom: 10
+}));
+
+export const GridContainer = styled(Grid)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 }));
