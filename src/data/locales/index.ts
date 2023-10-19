@@ -1,0 +1,1 @@
+export { translationEN } from './en';
