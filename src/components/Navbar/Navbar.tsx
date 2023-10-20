@@ -1,6 +1,7 @@
 import { Grid, Toolbar, Typography } from '@mui/material';
 
-import ChangeThemeButton from '../ChangeThemeButton';
+import ChangeLanguageButton from 'components/ChangeLanguageButton';
+import ChangeThemeButton from 'components/ChangeThemeButton';
 import NavButtons from './NavLinks/NavLinks';
 import { GridContainer, StyledAppbar } from './Navbar.styles';
 
@@ -16,6 +17,7 @@ const Navbar = () => {
             <NavButtons />
           </Grid>
           <Grid item xs={2} display="flex" justifyContent="center">
+            <ChangeLanguageButton />
             <ChangeThemeButton />
           </Grid>
         </GridContainer>

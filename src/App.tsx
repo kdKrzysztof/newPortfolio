@@ -11,7 +11,7 @@ function App() {
   const theme = useCustomTheme();
   return (
     <ThemeProvider theme={theme}>
-      <LoadingPage />
+      {/* <LoadingPage /> */}
       <CssBaseline />
       <Navbar />
       <Home />
