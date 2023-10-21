@@ -1,12 +1,16 @@
+import { useTranslation } from 'react-i18next';
+
 import { ButtonsContainer, StyledLink } from './NavLinks.styles';
 
 const NavLinks = () => {
+  const { t } = useTranslation();
+
   return (
     <ButtonsContainer sx={{ flexGrow: 1 }}>
-      <StyledLink>Home</StyledLink>
-      <StyledLink>About me</StyledLink>
-      <StyledLink>Projects</StyledLink>
-      <StyledLink>Contact</StyledLink>
+      <StyledLink>{t('HomeButton')}</StyledLink>
+      <StyledLink>{t('AboutMeButton')}</StyledLink>
+      <StyledLink>{t('ProjectsButton')}</StyledLink>
+      <StyledLink>{t('ContactButton')}</StyledLink>
     </ButtonsContainer>
   );
 };

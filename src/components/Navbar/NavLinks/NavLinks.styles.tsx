@@ -17,7 +17,8 @@ export const StyledLink = styled('a')(({ theme }) => ({
   marginRight: theme.spacing(2),
   transition: 'color 200ms',
   fontSize: theme.typography?.navLinks.fontSize,
-
+  inlineSize: 'max-content',
+  
   '&::before': {
     position: 'absolute',
     content: `""`,
