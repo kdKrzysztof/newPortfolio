@@ -1,6 +1,6 @@
 import { ButtonsContainer, StyledLink } from './NavLinks.styles';
 
-const NavButtons = () => {
+const NavLinks = () => {
   return (
     <ButtonsContainer sx={{ flexGrow: 1 }}>
       <StyledLink>Home</StyledLink>
@@ -11,4 +11,4 @@ const NavButtons = () => {
   );
 };
 
-export default NavButtons;
+export default NavLinks;
