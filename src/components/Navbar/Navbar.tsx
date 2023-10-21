@@ -1,5 +1,4 @@
 import { Toolbar } from '@mui/material';
-import { useEffect, useState } from 'react';
 
 import { useGetWindowSize } from 'hooks';
 
