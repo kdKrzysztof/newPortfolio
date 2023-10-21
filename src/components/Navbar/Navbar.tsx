@@ -1,27 +1,23 @@
-import { Grid, Toolbar, Typography } from '@mui/material';
+import { Toolbar } from '@mui/material';
+import { useEffect, useState } from 'react';
 
-import ChangeLanguageButton from 'components/ChangeLanguageButton';
-import ChangeThemeButton from 'components/ChangeThemeButton';
-
-import NavLinks from './NavLinks/NavLinks';
-import { GridContainer, StyledAppbar } from './Navbar.styles';
+import NavSideMenu from './NavSideMenu';
+import NavTopMenu from './NavTopMenu';
+import { StyledAppbar } from './Navbar.styles';
 
 const Navbar = () => {
+  const widthBreakpoint = 795;
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+  }, []);
+
   return (
     <StyledAppbar position="fixed" elevation={0}>
       <Toolbar sx={{ width: '80%' }}>
-        <GridContainer container>
-          <Grid item xs={2}>
-            <Typography variant="h4">Portfolio</Typography>
-          </Grid>
-          <Grid item xs>
-            <NavLinks />
-          </Grid>
-          <Grid item xs={2} display="flex" justifyContent="center">
-            <ChangeLanguageButton />
-            <ChangeThemeButton />
-          </Grid>
-        </GridContainer>
+        {width <= widthBreakpoint ? <NavSideMenu /> : <NavTopMenu />}
       </Toolbar>
     </StyledAppbar>
   );

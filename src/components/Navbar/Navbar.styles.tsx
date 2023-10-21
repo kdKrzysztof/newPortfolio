@@ -1,4 +1,4 @@
-import { AppBar, Grid, styled } from '@mui/material';
+import { AppBar, styled } from '@mui/material';
 
 export const StyledAppbar = styled(AppBar)(({ theme }) => ({
   alignItems: 'center',
@@ -8,10 +8,4 @@ export const StyledAppbar = styled(AppBar)(({ theme }) => ({
   zIndex: theme.palette.NavbarZindex,
   paddingTop: 10,
   paddingBottom: 10
-}));
-
-export const GridContainer = styled(Grid)(() => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
 }));
