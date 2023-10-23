@@ -1,10 +1,15 @@
 import { Box, styled } from '@mui/material';
 
-export const ButtonsContainer = styled(Box)(() => ({
+export const ButtonsContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  [theme.breakpoints.down('md')]: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexDirection: 'column'
+  }
 }));
 
 export const StyledLink = styled('a')(({ theme }) => ({
@@ -18,7 +23,7 @@ export const StyledLink = styled('a')(({ theme }) => ({
   transition: 'color 200ms',
   fontSize: theme.typography?.navLinks.fontSize,
   inlineSize: 'max-content',
-  
+
   '&::before': {
     position: 'absolute',
     content: `""`,

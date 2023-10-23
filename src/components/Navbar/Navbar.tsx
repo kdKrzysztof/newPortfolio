@@ -1,20 +1,22 @@
-import { Toolbar } from '@mui/material';
+import { useTheme } from '@mui/material';
 
 import { useGetWindowSize } from 'hooks';
 
-import NavSideMenu from './NavSideMenu';
 import NavTopMenu from './NavTopMenu';
-import { StyledAppbar } from './Navbar.styles';
+import { StyledAppbar, StyledToolbar } from './Navbar.styles';
 
 const Navbar = () => {
-  const widthBreakpoint = 850;
+  const theme = useTheme();
+  const mdWidthBreakpoint = theme.breakpoints.values.md;
   const { windowWidth } = useGetWindowSize();
+  const isBelowWidthBreakpoint = windowWidth <= mdWidthBreakpoint;
 
   return (
     <StyledAppbar position="fixed" elevation={0}>
-      <Toolbar sx={{ width: '80%' }}>
-        {windowWidth <= widthBreakpoint ? <NavSideMenu /> : <NavTopMenu />}
-      </Toolbar>
+      <StyledToolbar
+        variant={isBelowWidthBreakpoint ? 'dense' : 'regular'}>
+        <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
+      </StyledToolbar>
     </StyledAppbar>
   );
 };

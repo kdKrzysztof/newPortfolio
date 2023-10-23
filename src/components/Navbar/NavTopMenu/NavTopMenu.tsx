@@ -1,20 +1,35 @@
-import { Grid, Typography } from '@mui/material';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { Grid, IconButton, Typography } from '@mui/material';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
 import NavLinks from '../NavLinks/NavLinks';
-import { GridContainer } from './NavTopMenu.styles';
+import { GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
 
-const NavTopMenu = () => {
+interface INavTopMenu {
+  isBelowWidthBreakpoint: boolean;
+}
+
+const NavTopMenu = ({ isBelowWidthBreakpoint }: INavTopMenu) => {
   return (
     <GridContainer container>
-      <Grid item xs={2}>
-        <Typography variant="h4">Portfolio</Typography>
-      </Grid>
+      <GridTitle container xs={isBelowWidthBreakpoint ? 10 : 1}>
+        {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
+        <GridTitle item xs>
+          <HeaderTitle variant="h4">Portfolio</HeaderTitle>
+        </GridTitle>
+        {isBelowWidthBreakpoint ? (
+          <Grid item xs={1}>
+            <IconButton>
+              <MenuRoundedIcon />
+            </IconButton>
+          </Grid>
+        ) : null}
+      </GridTitle>
       <Grid item xs>
         <NavLinks />
       </Grid>
-      <Grid item xs={2} display="flex" justifyContent="center">
+      <Grid item xs={1} display="flex" justifyContent="center">
         <ChangeLanguageButton />
         <ChangeThemeButton />
       </Grid>

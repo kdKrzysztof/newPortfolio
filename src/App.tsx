@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 
-import { Home, LoadingPage } from 'pages';
+import { Home} from 'pages';
 
 import { useCustomTheme } from 'hooks';
 
