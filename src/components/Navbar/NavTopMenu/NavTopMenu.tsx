@@ -1,10 +1,10 @@
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import { Grid, IconButton, Typography } from '@mui/material';
+import { Grid} from '@mui/material';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
 import NavLinks from '../NavLinks/NavLinks';
 import { GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
+import NavOpenMenuButton from '../NavOpenMenuButton';
 
 interface INavTopMenu {
   isBelowWidthBreakpoint: boolean;
@@ -13,16 +13,14 @@ interface INavTopMenu {
 const NavTopMenu = ({ isBelowWidthBreakpoint }: INavTopMenu) => {
   return (
     <GridContainer container>
-      <GridTitle container xs={isBelowWidthBreakpoint ? 10 : 1}>
+      <GridTitle container item xs={isBelowWidthBreakpoint ? 10 : 1}>
         {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
         <GridTitle item xs>
           <HeaderTitle variant="h4">Portfolio</HeaderTitle>
         </GridTitle>
         {isBelowWidthBreakpoint ? (
           <Grid item xs={1}>
-            <IconButton>
-              <MenuRoundedIcon />
-            </IconButton>
+            <NavOpenMenuButton />
           </Grid>
         ) : null}
       </GridTitle>

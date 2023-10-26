@@ -7,14 +7,13 @@ import { StyledAppbar, StyledToolbar } from './Navbar.styles';
 
 const Navbar = () => {
   const theme = useTheme();
-  const mdWidthBreakpoint = theme.breakpoints.values.md;
+  const mdWidthBreakpoint = theme.breakpoints.values.md - 1;
   const { windowWidth } = useGetWindowSize();
   const isBelowWidthBreakpoint = windowWidth <= mdWidthBreakpoint;
 
   return (
     <StyledAppbar position="fixed" elevation={0}>
-      <StyledToolbar
-        variant={isBelowWidthBreakpoint ? 'dense' : 'regular'}>
+      <StyledToolbar variant={isBelowWidthBreakpoint ? 'dense' : 'regular'}>
         <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
       </StyledToolbar>
     </StyledAppbar>

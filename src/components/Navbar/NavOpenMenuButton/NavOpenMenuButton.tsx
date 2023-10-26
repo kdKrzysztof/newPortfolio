@@ -1,9 +1,12 @@
-import { motion } from 'framer-motion'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import { IconButton } from '@mui/material';
 
-const NavSideMenu = () => {
+const NavOpenMenuButton = () => {
   return (
-    <motion.nav>NavSideMenu</motion.nav>
-  )
-}
+    <IconButton>
+      <MenuRoundedIcon />
+    </IconButton>
+  );
+};
 
-export default NavSideMenu
+export default NavOpenMenuButton;

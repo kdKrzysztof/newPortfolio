@@ -11,13 +11,15 @@ export const StyledAppbar = styled(AppBar)(({ theme }) => ({
 }));
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  display: 'flex',
   width: '80%',
+  height: '100%',
   [theme.breakpoints.down('md')]: {
-    display: 'flex',
+    maxHeight: theme.mixins.toolbar.minHeight,
     justifyContent: 'flex-start',
-
-    '& > :first-child': {
-      display: 'flex',
+    alignItems: 'flex-start',
+    overflowY: 'hidden',
+    '& > :first-of-type': {
       flexDirection: 'column',
       justifyContent: 'flex-start',
       '& > *': {
