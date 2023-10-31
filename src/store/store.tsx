@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import loadingAnimationSlice from './reducers/loadingAnimationSlice';
 import themeSlice from './reducers/themeSlice';
+import navbarMenuSlice from './reducers/navbarMenuSlice';
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice,
-    loadingAnimationSlice: loadingAnimationSlice
+    loadingAnimationSlice: loadingAnimationSlice,
+    navbarMenuSlice: navbarMenuSlice
   }
 });
 
