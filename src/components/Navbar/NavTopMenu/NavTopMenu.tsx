@@ -1,10 +1,10 @@
-import { Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
 import NavLinks from '../NavLinks/NavLinks';
-import { GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
 import NavOpenMenuButton from '../NavOpenMenuButton';
+import { GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
 
 interface INavTopMenu {
   isBelowWidthBreakpoint: boolean;

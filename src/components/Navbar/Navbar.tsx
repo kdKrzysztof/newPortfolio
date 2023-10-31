@@ -1,9 +1,9 @@
-import { useTheme } from '@mui/material';
+import { Box, Collapse, useTheme } from '@mui/material';
 
 import { useGetWindowSize } from 'hooks';
 
 import NavTopMenu from './NavTopMenu';
-import { StyledAppbar, StyledToolbar } from './Navbar.styles';
+import { StyledHeader, StyledToolbar } from './Navbar.styles';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -12,11 +12,22 @@ const Navbar = () => {
   const isBelowWidthBreakpoint = windowWidth <= mdWidthBreakpoint;
 
   return (
-    <StyledAppbar position="fixed" elevation={0}>
-      <StyledToolbar variant={isBelowWidthBreakpoint ? 'dense' : 'regular'}>
-        <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
-      </StyledToolbar>
-    </StyledAppbar>
+    <StyledHeader>
+      <Collapse
+        in={true}
+        orientation="vertical"
+        collapsedSize={theme.mixins.toolbar.minHeight}
+        sx={{
+          width: '100%'
+        }}>
+        <Box
+          sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <StyledToolbar>
+            <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
+          </StyledToolbar>
+        </Box>
+      </Collapse>
+    </StyledHeader>
   );
 };
 
