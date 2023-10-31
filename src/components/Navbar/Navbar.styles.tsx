@@ -1,21 +1,23 @@
-import { AppBar, Toolbar, styled } from '@mui/material';
+import { Toolbar, styled } from '@mui/material';
 
-export const StyledAppbar = styled(AppBar)(({ theme }) => ({
+export const StyledHeader = styled('header')(({ theme }) => ({
+  display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
+  position: 'fixed',
+  width: '100%',
+  paddingTop: 10,
+  paddingBottom: 10,
   background: theme.palette.AppbarBackground,
   backdropFilter: 'blur(10px)',
   WebkitBackdropFilter: 'blur(10px)',
-  zIndex: theme.palette.NavbarZindex,
-  paddingTop: 10,
-  paddingBottom: 10
+  zIndex: theme.palette.NavbarZindex
 }));
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
   width: '80%',
-  height: '100%',
   [theme.breakpoints.down('md')]: {
-    maxHeight: theme.mixins.toolbar.minHeight,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     overflowY: 'hidden',
