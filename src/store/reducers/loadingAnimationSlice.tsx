@@ -5,8 +5,8 @@ const initialState = {
   animationFinished: false
 };
 
-const isLoadingAnimSlice = createSlice({
-  name: 'isLoadingAnimation',
+const loadingAnimationSlice = createSlice({
+  name: 'loadingAnimation',
   initialState,
   reducers: {
     animationUnpause: (state) => {
@@ -21,5 +21,6 @@ const isLoadingAnimSlice = createSlice({
   }
 });
 
-export const { animationUnpause, animationPause, animationFinished } = isLoadingAnimSlice.actions;
-export default isLoadingAnimSlice.reducer;
+export const { animationUnpause, animationPause, animationFinished } =
+  loadingAnimationSlice.actions;
+export default loadingAnimationSlice.reducer;

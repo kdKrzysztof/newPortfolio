@@ -1,9 +1,9 @@
 import { useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-import { useAppDispatch } from 'hooks/reduxHooks';
+import { animationFinished } from 'src/store/reducers/loadingAnimationSlice';
 
-import { animationFinished } from 'store/reducers/isLoadingAnimSlice';
+import { useAppDispatch } from 'hooks/reduxHooks';
 
 import delayCode from 'utils/delayCode';
 
