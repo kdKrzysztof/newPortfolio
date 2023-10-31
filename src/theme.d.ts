@@ -14,6 +14,10 @@ declare module '@mui/material/styles' {
     VantaBackgroundColor: React.CSSProperties['backgroundColor'];
   }
 
+  interface Theme {
+    NavbarZindex: number;
+  }
+
   interface TypographyVariants {
     navLinks: React.CSSProperties;
   }

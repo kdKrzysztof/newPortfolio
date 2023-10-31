@@ -11,7 +11,7 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   background: theme.palette.AppbarBackground,
   backdropFilter: 'blur(10px)',
   WebkitBackdropFilter: 'blur(10px)',
-  zIndex: theme.palette.NavbarZindex
+  zIndex: theme.NavbarZindex
 }));
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
