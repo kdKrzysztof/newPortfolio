@@ -1,4 +1,4 @@
-import { Toolbar, styled } from '@mui/material';
+import { Box, Toolbar, styled } from '@mui/material';
 
 export const StyledHeader = styled('header')(({ theme }) => ({
   display: 'flex',
@@ -31,3 +31,10 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     }
   }
 }));
+
+export const NavContentWrapper = styled(Box)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%'
+});

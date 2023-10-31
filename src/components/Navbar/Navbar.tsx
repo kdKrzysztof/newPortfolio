@@ -1,11 +1,11 @@
-import { Box, Collapse, useTheme } from '@mui/material';
+import { Collapse, useTheme } from '@mui/material';
 
 import { useAppSelector } from 'src/hooks/reduxHooks';
 
 import { useGetWindowSize } from 'hooks';
 
 import NavTopMenu from './NavTopMenu';
-import { StyledHeader, StyledToolbar } from './Navbar.styles';
+import { NavContentWrapper, StyledHeader, StyledToolbar } from './Navbar.styles';
 
 const Navbar = () => {
   const theme = useTheme();
@@ -13,6 +13,7 @@ const Navbar = () => {
   const { windowWidth } = useGetWindowSize();
   const isBelowWidthBreakpoint = windowWidth <= mdWidthBreakpoint;
   const openMenu = useAppSelector((state) => state.navbarMenuSlice.showNav);
+
   return (
     <StyledHeader>
       <Collapse
@@ -22,12 +23,11 @@ const Navbar = () => {
         sx={{
           width: '100%'
         }}>
-        <Box
-          sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <NavContentWrapper>
           <StyledToolbar>
             <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
           </StyledToolbar>
-        </Box>
+        </NavContentWrapper>
       </Collapse>
     </StyledHeader>
   );
