@@ -7,7 +7,6 @@ const dark: PaletteOptions = {
   primary: {
     main: 'rgb(0, 173, 181)'
   },
-  NavbarZindex: 2,
   AppbarBackground: 'rgba(12, 15, 18, .25)',
   VantaBackgroundColor: '#0c0f12'
 } as PaletteOptions;
