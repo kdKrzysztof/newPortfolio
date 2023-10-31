@@ -5,7 +5,13 @@ const globalStyleProps: ThemeOptions = {
     navLinks: {
       fontSize: '1.2rem'
     }
-  }
+  },
+  mixins: {
+    toolbar: {
+      minHeight: '64px'
+    }
+  },
+  NavbarZindex: 2
 } as ThemeOptions;
 
 export default globalStyleProps;
