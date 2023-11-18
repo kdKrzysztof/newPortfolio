@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
 import NavLinks from '../NavLinks/NavLinks';
-import NavOpenMenuButton from '../NavOpenMenuButton';
+import NavOpenMenuButton from '../OpenMenuButton';
 import { GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
 
 interface INavTopMenu {
@@ -14,15 +14,15 @@ const NavTopMenu = ({ isBelowWidthBreakpoint }: INavTopMenu) => {
   return (
     <GridContainer container>
       <GridTitle container item xs={isBelowWidthBreakpoint ? 10 : 1}>
+        {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
+        <GridTitle item xs>
+          <HeaderTitle variant="h4">Portfolio</HeaderTitle>
+        </GridTitle>
         {isBelowWidthBreakpoint ? (
           <Grid item xs={1}>
             <NavOpenMenuButton />
           </Grid>
         ) : null}
-        <GridTitle item xs>
-          <HeaderTitle variant="h4">Portfolio</HeaderTitle>
-        </GridTitle>
-        {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
       </GridTitle>
       {isBelowWidthBreakpoint ? null : (
         <>
