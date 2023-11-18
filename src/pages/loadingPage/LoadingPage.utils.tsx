@@ -5,7 +5,7 @@ import { useAppSelector } from 'src/hooks/reduxHooks';
 
 const useloadingPage = () => {
   const isAnimationFinished = useAppSelector(
-    (state) => state.isLoadingAnimationRunning.animationFinished
+    (state) => state.loadingAnimationSlice.animationFinished
   );
 
   const [hideComponent, setHideComponent] = useState(false)

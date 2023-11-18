@@ -24,6 +24,11 @@ export const StyledLink = styled('a')(({ theme }) => ({
   fontSize: theme.typography?.navLinks.fontSize,
   inlineSize: 'max-content',
 
+  [theme.breakpoints.down('md')]: {
+    marginTop: 2,
+    marginBottom: 2
+  },
+
   '&::before': {
     position: 'absolute',
     content: `""`,

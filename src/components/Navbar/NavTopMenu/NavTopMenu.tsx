@@ -14,23 +14,27 @@ const NavTopMenu = ({ isBelowWidthBreakpoint }: INavTopMenu) => {
   return (
     <GridContainer container>
       <GridTitle container item xs={isBelowWidthBreakpoint ? 10 : 1}>
-        {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
-        <GridTitle item xs>
-          <HeaderTitle variant="h4">Portfolio</HeaderTitle>
-        </GridTitle>
         {isBelowWidthBreakpoint ? (
           <Grid item xs={1}>
             <NavOpenMenuButton />
           </Grid>
         ) : null}
+        <GridTitle item xs>
+          <HeaderTitle variant="h4">Portfolio</HeaderTitle>
+        </GridTitle>
+        {isBelowWidthBreakpoint ? <Grid item xs={1} /> : null}
       </GridTitle>
-      <Grid item xs>
-        <NavLinks />
-      </Grid>
-      <Grid item xs={1} display="flex" justifyContent="center">
-        <ChangeLanguageButton />
-        <ChangeThemeButton />
-      </Grid>
+      {isBelowWidthBreakpoint ? null : (
+        <>
+          <Grid item xs>
+            <NavLinks />
+          </Grid>
+          <Grid item xs={1} display="flex" justifyContent="center">
+            <ChangeLanguageButton />
+            <ChangeThemeButton />
+          </Grid>
+        </>
+      )}
     </GridContainer>
   );
 };
