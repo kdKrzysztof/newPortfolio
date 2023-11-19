@@ -17,6 +17,7 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'center',
   width: '100%',
   height: '100%',
+  padding: '0 !important',
   maxHeight: theme.mixins.toolbar.minHeight,
   background: theme.palette.AppbarBackground,
   backdropFilter: 'blur(10px)',
