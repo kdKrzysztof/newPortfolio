@@ -25,8 +25,8 @@ export const StyledLink = styled('a')(({ theme }) => ({
   inlineSize: 'max-content',
 
   [theme.breakpoints.down('md')]: {
-    marginTop: 2,
-    marginBottom: 2
+    marginTop: 6,
+    marginBottom: 6
   },
 
   '&::before': {
