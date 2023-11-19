@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHooks';
