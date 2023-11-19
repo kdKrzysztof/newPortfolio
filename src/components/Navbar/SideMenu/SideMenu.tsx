@@ -1,7 +1,6 @@
 import { Divider, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
-import { ChangeLanguageButton } from 'src/components';
 import { useAppSelector } from 'src/hooks/reduxHooks';
 
 import NavLinks from '../NavLinks/NavLinks';

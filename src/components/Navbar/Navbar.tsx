@@ -1,4 +1,4 @@
-import { Collapse, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 
 import { useGetWindowSize } from 'hooks';
 
