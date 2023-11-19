@@ -4,7 +4,8 @@ export const GridContainer = styled(Grid)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '90%'
+  width: '90%',
+  height: '100%'
 }));
 
 export const GridTitle = styled(Grid)(() => ({
