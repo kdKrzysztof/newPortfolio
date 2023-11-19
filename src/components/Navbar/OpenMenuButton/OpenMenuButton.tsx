@@ -1,22 +1,27 @@
+import CloseIcon from '@mui/icons-material/Close';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { IconButton } from '@mui/material';
 
 import { useAppDispatch } from 'hooks/reduxHooks';
 
-import { slideNav } from 'store/reducers/navbarMenuSlice';
+import { closeNav, openNav } from 'store/reducers/navbarMenuSlice';
 
-const NavOpenMenuButton = () => {
+interface OpenMenuButton {
+  icon?: 'close' | 'open' | undefined;
+}
+
+const OpenMenuButton = ({ icon }: OpenMenuButton) => {
   const dispatch = useAppDispatch();
 
   const clickMenuButton = () => {
-    dispatch(slideNav());
+    icon === 'open' ? dispatch(openNav()) : dispatch(closeNav());
   };
 
   return (
     <IconButton onClick={clickMenuButton}>
-      <MenuRoundedIcon />
+      {icon === 'open' ? <MenuRoundedIcon /> : <CloseIcon />}
     </IconButton>
   );
 };
 
-export default NavOpenMenuButton;
+export default OpenMenuButton;
