@@ -8,11 +8,14 @@ const navbarMenuSlice = createSlice({
   name: 'navbarMenuSlice',
   initialState,
   reducers: {
-    slideNav: (state) => {
-      state.showNav = !state.showNav;
+    openNav: (state) => {
+      state.showNav = true;
+    },
+    closeNav: (state) => {
+      state.showNav = false;
     }
   }
 });
 
-export const { slideNav } = navbarMenuSlice.actions;
+export const { openNav, closeNav } = navbarMenuSlice.actions;
 export default navbarMenuSlice.reducer;
