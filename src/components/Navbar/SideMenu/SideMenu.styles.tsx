@@ -30,3 +30,14 @@ export const SideMenuHeader = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   height: theme.mixins.toolbar.minHeight
 }));
+
+export const SideMenuBackgroundBlur = styled(motion.div)(({ theme }) => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100vw',
+  height: '100vh',
+  background: theme.palette.AppbarBackground,
+  backdropFilter: 'blur(10px)',
+  WebkitBackdropFilter: 'blur(10px)'
+}));
