@@ -10,7 +10,6 @@ export const sidebar = {
   closed: {
     clipPath: 'circle(0px at 0px 0px)',
     transition: {
-      delay: 0.5,
       type: 'spring',
       stiffness: 400,
       damping: 40
