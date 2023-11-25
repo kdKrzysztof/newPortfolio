@@ -13,14 +13,12 @@ const Navbar = () => {
   const isBelowWidthBreakpoint = windowWidth <= mdWidthBreakpoint;
 
   return (
-    <>
-      <StyledHeader>
-        <SideMenu />
-        <StyledToolbar>
-          <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
-        </StyledToolbar>
-      </StyledHeader>
-    </>
+    <StyledHeader>
+      <SideMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint}/>
+      <StyledToolbar>
+        <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
+      </StyledToolbar>
+    </StyledHeader>
   );
 };
 

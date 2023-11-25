@@ -1,6 +1,7 @@
 import { Divider, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
+import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHooks';
 
 import { closeNav } from 'store/reducers/navbarMenuSlice';
@@ -10,11 +11,15 @@ import OpenMenuButton from '../OpenMenuButton';
 import { SideMenuBackgroundBlur, SideMenuBody, SideMenuHeader } from './SideMenu.styles';
 import { sidebar, sidebarBackground } from './framerData';
 
-const SideMenu = () => {
+interface ISideMenu {
+  isBelowWidthBreakpoint: boolean;
+}
+
+const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
   const menuState = useAppSelector((state) => state.navbarMenuSlice.showNav);
   const dispatch = useAppDispatch();
 
-  return (
+  return isBelowWidthBreakpoint ? (
     <>
       <SideMenuBackgroundBlur
         initial={'hide'}
@@ -30,10 +35,12 @@ const SideMenu = () => {
           </SideMenuHeader>
           <Divider sx={{ marginBottom: 2 }} />
           <NavLinks />
+          <ChangeLanguageButton />
+          <ChangeThemeButton />
         </SideMenuBody>
       </motion.nav>
     </>
-  );
+  ) : null;
 };
 
 export default SideMenu;
