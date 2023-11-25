@@ -5,8 +5,6 @@ import { animationFinished } from 'src/store/reducers/loadingAnimationSlice';
 
 import { useAppDispatch } from 'hooks/reduxHooks';
 
-import delayCode from 'utils/delayCode';
-
 const useLoadingControls = () => {
   const [SpeedUp, setSpeedup] = useState(true);
   const controls = useAnimation();
@@ -22,7 +20,6 @@ const useLoadingControls = () => {
     await controls.start('shrinkStroke');
 
     dispatch(animationFinished());
-    await delayCode(100);
 
     // animate(); // recursive loading functions
   };
