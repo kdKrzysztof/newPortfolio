@@ -18,3 +18,8 @@ export const HeaderTitle = styled(Typography)({
   alignItems: 'center',
   height: '100%'
 });
+
+export const GridButtons = styled(Grid)({
+  display: 'flex',
+  justifyContent: 'center'
+});
