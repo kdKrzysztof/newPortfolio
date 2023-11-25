@@ -2,10 +2,10 @@ import { styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
 export const StyledSVG = styled(motion.svg)({
-  width: '250px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  width: '250px',
   overflow: 'visible',
   stroke: '#00ADB5',
   strokeWidth: 5,

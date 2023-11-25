@@ -4,7 +4,7 @@ import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
 import NavLinks from '../NavLinks/NavLinks';
 import OpenMenuButton from '../OpenMenuButton';
-import { GridButtons, GridContainer, GridTitle, HeaderTitle } from './NavTopMenu.styles';
+import { GridButtons, GridContainer, HeaderTitle } from './NavTopMenu.styles';
 
 interface INavTopMenu {
   isBelowWidthBreakpoint: boolean;
@@ -13,17 +13,17 @@ interface INavTopMenu {
 const NavTopMenu = ({ isBelowWidthBreakpoint }: INavTopMenu) => {
   return (
     <GridContainer container>
-      <GridTitle container item xs={isBelowWidthBreakpoint ? 12 : 2}>
+      <Grid container item xs={isBelowWidthBreakpoint ? 12 : 2}>
         {isBelowWidthBreakpoint ? (
           <Grid item xs={2}>
             <OpenMenuButton icon="open" />
           </Grid>
         ) : null}
-        <GridTitle item xs>
+        <Grid item xs>
           <HeaderTitle variant="h4">Portfolio</HeaderTitle>
-        </GridTitle>
+        </Grid>
         {isBelowWidthBreakpoint ? <Grid item xs={2} /> : null}
-      </GridTitle>
+      </Grid>
       {isBelowWidthBreakpoint ? null : (
         <>
           <Grid item xs>

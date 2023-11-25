@@ -1,18 +1,9 @@
 import { Box, styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
-export const SideMenuWrapper = styled(Box)({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '100%'
-});
-
 export const SideMenuBody = styled(motion.div)(({ theme }) => ({
   position: 'absolute',
-  top: 0,
-  left: 0,
-  bottom: 0,
+  height: '100%',
   background: theme.palette.VantaBackgroundColor,
   zIndex: 4,
   [theme.breakpoints.down('md')]: {
@@ -33,8 +24,6 @@ export const SideMenuHeader = styled(Box)(({ theme }) => ({
 
 export const SideMenuBackgroundBlur = styled(motion.div)(({ theme }) => ({
   position: 'absolute',
-  top: 0,
-  left: 0,
   width: '100vw',
   height: '100vh',
   background: theme.palette.AppbarBackground,

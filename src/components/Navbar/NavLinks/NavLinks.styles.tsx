@@ -6,15 +6,13 @@ export const ButtonsContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   [theme.breakpoints.down('md')]: {
-    display: 'flex',
-    justifyContent: 'flex-start',
     flexDirection: 'column'
   }
 }));
 
 export const StyledLink = styled('a')(({ theme }) => ({
-  position: 'relative',
   display: 'flex',
+  position: 'relative',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-end',
@@ -22,7 +20,6 @@ export const StyledLink = styled('a')(({ theme }) => ({
   marginRight: theme.spacing(2),
   transition: 'color 200ms',
   fontSize: theme.typography?.navLinks.fontSize,
-  inlineSize: 'max-content',
 
   [theme.breakpoints.down('md')]: {
     marginTop: 6,

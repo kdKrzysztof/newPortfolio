@@ -6,7 +6,7 @@ const NavLinks = () => {
   const { t } = useTranslation();
 
   return (
-    <ButtonsContainer component="nav" sx={{ flexGrow: 1 }}>
+    <ButtonsContainer component="nav">
       <StyledLink>{t('HomeButton')}</StyledLink>
       <StyledLink>{t('AboutMeButton')}</StyledLink>
       <StyledLink>{t('ProjectsButton')}</StyledLink>
