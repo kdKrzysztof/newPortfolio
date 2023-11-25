@@ -1,35 +1,29 @@
 import LanguageIcon from '@mui/icons-material/Language';
 import { IconButton, Menu, Tooltip } from '@mui/material';
-import type { PopoverOrigin, SxProps, Theme } from '@mui/material';
+import type { PopoverOrigin } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 import useChangeLanguageButton from './ChangeLanguageButton.utils';
-import LanguageItem from './LanguageItem/LanguageItem';
+import { LanguageItem } from './Subcomponents';
 
-interface IChangeLanguageButton {
-  edge?: false | 'end' | 'start' | undefined;
-  sx?: SxProps<Theme>;
-}
-
-const ChangeLanguageButton = ({ edge, sx }: IChangeLanguageButton) => {
-  const { anchorEl, handleClose, handleMenu } = useChangeLanguageButton();
-
+const ChangeLanguageButton = () => {
+  const { anchorEl, closeMenu, openMenu } = useChangeLanguageButton();
   const { t } = useTranslation();
 
-  const menuAnchorOrigin: PopoverOrigin  = {
+  const menuAnchorOrigin: PopoverOrigin = {
     vertical: 'bottom',
     horizontal: 'right'
-  }
+  };
 
-  const menuTransformOrigin: PopoverOrigin  = {
+  const menuTransformOrigin: PopoverOrigin = {
     vertical: 'top',
     horizontal: 'right'
-  }
+  };
 
   return (
     <>
       <Tooltip title="Change language">
-        <IconButton color="inherit" onClick={handleMenu} edge={edge} sx={sx}>
+        <IconButton color="inherit" onClick={openMenu}>
           <LanguageIcon />
         </IconButton>
       </Tooltip>
@@ -38,11 +32,11 @@ const ChangeLanguageButton = ({ edge, sx }: IChangeLanguageButton) => {
         anchorOrigin={menuAnchorOrigin}
         transformOrigin={menuTransformOrigin}
         open={Boolean(anchorEl)}
-        onClose={handleClose}>
-        <LanguageItem onClick={handleClose} id="pl">
+        onClose={closeMenu}>
+        <LanguageItem onClick={closeMenu} id="pl">
           {t('LangPL')}
         </LanguageItem>
-        <LanguageItem onClick={handleClose} id="en">
+        <LanguageItem onClick={closeMenu} id="en">
           {t('LangEN')}
         </LanguageItem>
       </Menu>
