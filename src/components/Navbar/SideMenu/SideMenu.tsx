@@ -13,6 +13,7 @@ import { sidebar, sidebarBackground } from './framerData';
 const SideMenu = () => {
   const menuState = useAppSelector((state) => state.navbarMenuSlice.showNav);
   const dispatch = useAppDispatch();
+
   return (
     <>
       <SideMenuBackgroundBlur
