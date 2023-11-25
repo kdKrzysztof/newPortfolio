@@ -1,4 +1,4 @@
-import { Divider, Typography } from '@mui/material';
+import { Divider, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
@@ -8,7 +8,12 @@ import { closeNav } from 'store/reducers/navbarMenuSlice';
 
 import NavLinks from '../NavLinks/NavLinks';
 import OpenMenuButton from '../OpenMenuButton';
-import { SideMenuBackgroundBlur, SideMenuBody, SideMenuHeader } from './SideMenu.styles';
+import {
+  CloseButtonGrid,
+  SideMenuBackgroundBlur,
+  SideMenuBody,
+  SideMenuHeader
+} from './SideMenu.styles';
 import { sidebar, sidebarBackground } from './framerData';
 
 interface ISideMenu {
@@ -29,14 +34,18 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
       />
       <motion.nav initial={false} animate={menuState ? 'open' : 'closed'}>
         <SideMenuBody variants={sidebar}>
+          <CloseButtonGrid container>
+            <Grid item xs={2}>
+              <OpenMenuButton icon="close" />
+            </Grid>
+            <Grid item xs />
+          </CloseButtonGrid>
           <SideMenuHeader>
-            <Typography variant="h5">Menu</Typography>
-            <OpenMenuButton icon="close" />
+            <ChangeLanguageButton />
+            <ChangeThemeButton />
           </SideMenuHeader>
           <Divider sx={{ marginBottom: 2 }} />
           <NavLinks />
-          <ChangeLanguageButton />
-          <ChangeThemeButton />
         </SideMenuBody>
       </motion.nav>
     </>
@@ -44,3 +53,8 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
 };
 
 export default SideMenu;
+
+{
+  /* <Typography variant="h5">Menu</Typography>
+<OpenMenuButton icon="close" /> */
+}

@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Grid, styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
 export const SideMenuBody = styled(motion.div)(({ theme }) => ({
@@ -14,14 +14,6 @@ export const SideMenuBody = styled(motion.div)(({ theme }) => ({
   }
 }));
 
-export const SideMenuHeader = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  height: theme.mixins.toolbar.minHeight
-}));
-
 export const SideMenuBackgroundBlur = styled(motion.div)(({ theme }) => ({
   position: 'absolute',
   width: '100vw',
@@ -29,4 +21,21 @@ export const SideMenuBackgroundBlur = styled(motion.div)(({ theme }) => ({
   background: theme.palette.AppbarBackground,
   backdropFilter: 'blur(10px)',
   WebkitBackdropFilter: 'blur(10px)'
+}));
+
+export const SideMenuHeader = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  height: theme.mixins.toolbar.minHeight
+}));
+
+export const CloseButtonGrid = styled(Grid)(({ theme }) => ({
+  position: 'absolute',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '90vw',
+  marginLeft: '5vw',
+  height: theme.mixins.toolbar.minHeight
 }));
