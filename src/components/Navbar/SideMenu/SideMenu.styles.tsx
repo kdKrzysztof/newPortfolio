@@ -2,7 +2,9 @@ import { Box, Grid, styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
 export const SideMenuBody = styled(motion.div)(({ theme }) => ({
+  display: 'flex',
   position: 'absolute',
+  flexDirection: 'column',
   height: '100%',
   background: theme.palette.VantaBackgroundColor,
   zIndex: 4,
@@ -40,3 +42,10 @@ export const CloseButtonGrid = styled(Box)(({ theme }) => ({
   marginLeft: '5vw', // I have found no other solution to align close button to open menu button, while being separate buttons
   height: theme.mixins.toolbar.minHeight
 }));
+
+export const SideMenuContent = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  flexGrow: 1
+});
