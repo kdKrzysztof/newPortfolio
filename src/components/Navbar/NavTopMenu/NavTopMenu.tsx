@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 
-import NavLinks from '../NavLinks/NavLinks';
+import { NavLinks } from '../NavLinks';
 import OpenMenuButton from '../OpenMenuButton';
 import { GridButtons, GridContainer, HeaderTitle } from './NavTopMenu.styles';
 

@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHooks';
 
 import { closeNav } from 'store/reducers/navbarMenuSlice';
 
-import NavLinks from '../NavLinks/NavLinks';
+import { NavLinksSidebar } from '../NavLinks';
 import OpenMenuButton from '../OpenMenuButton';
 import {
   CloseButtonGrid,
@@ -44,8 +44,8 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
             <ChangeLanguageButton />
             <ChangeThemeButton />
           </SideMenuHeader>
-          <Divider sx={{ marginBottom: 2 }} />
-          <NavLinks />
+          <Divider sx={{ marginBottom: 3 }} />
+          <NavLinksSidebar />
         </SideMenuBody>
       </motion.nav>
     </>

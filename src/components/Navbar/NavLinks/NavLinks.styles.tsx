@@ -6,7 +6,9 @@ export const ButtonsContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   [theme.breakpoints.down('md')]: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    marginLeft: 35
   }
 }));
 
@@ -18,12 +20,11 @@ export const StyledLink = styled('a')(({ theme }) => ({
   justifyContent: 'flex-end',
   marginLeft: theme.spacing(2),
   marginRight: theme.spacing(2),
-  transition: 'color 200ms',
   fontSize: theme.typography?.navLinks.fontSize,
 
   [theme.breakpoints.down('md')]: {
-    marginTop: 6,
-    marginBottom: 6
+    marginTop: 10,
+    marginBottom: 10
   },
 
   '&::before': {
@@ -34,12 +35,22 @@ export const StyledLink = styled('a')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     transition: 'width 200ms'
   },
-
   '&:hover': {
     color: theme.palette.primary.main,
     '&::before': {
       width: '100%',
       transition: 'width 200ms'
     }
+  }
+}));
+
+export const LinkContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  transition: 'color 200ms',
+  '&:hover': {
+    color: theme.palette.primary.main
   }
 }));
