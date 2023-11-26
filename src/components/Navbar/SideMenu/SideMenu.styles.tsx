@@ -31,10 +31,10 @@ export const SideMenuHeader = styled(Box)(({ theme }) => ({
   height: theme.mixins.toolbar.minHeight
 }));
 
-export const CloseButtonGrid = styled(Grid)(({ theme }) => ({
+export const CloseButtonGrid = styled(Box)(({ theme }) => ({
   position: 'absolute',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
   alignItems: 'center',
   width: '90vw',
   marginLeft: '5vw', // I have found no other solution to align close button to open menu button, while being separate buttons

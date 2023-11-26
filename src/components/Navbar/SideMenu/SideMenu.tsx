@@ -1,4 +1,4 @@
-import { Divider, Grid, Typography } from '@mui/material';
+import { Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
@@ -34,11 +34,8 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
       />
       <motion.nav initial={false} animate={menuState ? 'open' : 'closed'}>
         <SideMenuBody variants={sidebar}>
-          <CloseButtonGrid container>
-            <Grid item xs={2}>
+          <CloseButtonGrid>
               <OpenMenuButton icon="close" />
-            </Grid>
-            <Grid item xs />
           </CloseButtonGrid>
           <SideMenuHeader>
             <ChangeLanguageButton />
