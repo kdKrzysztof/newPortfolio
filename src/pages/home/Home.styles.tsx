@@ -10,13 +10,7 @@ export const HomeContainer = styled(Box)(({ theme }) => ({
   width: '100vw',
   height: '100vh',
   backgroundColor: 'transparent',
-  overflowX: 'hidden',
-  [theme.breakpoints.down('md')]: {
-    justifyContent: 'flex-end'
-  },
-  [theme.breakpoints.down('sm')]: {
-    justifyContent: 'center'
-  }
+  overflowX: 'hidden'
 }));
 
 export const HomeMainTitle = styled(Typography)(({ theme }) => ({
@@ -49,10 +43,14 @@ export const HomeDescContainer = styled(Box)(({ theme }) => ({
   width: '60%',
   [theme.breakpoints.down('md')]: {
     minWidth: '90%',
+    marginTop: 100,
     marginBottom: 50
   },
   [theme.breakpoints.down('sm')]: {
     minWidth: '100%'
+  },
+  '@media(max-height: 519px)': {
+    width: '100%'
   }
 }));
 
@@ -73,6 +71,12 @@ export const HomeGraphics = styled(Box)(({ theme }) => ({
       width: '250px'
     },
     [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    },
+    '@media(max-height: 635px) and (max-width: 899px)': {
+      display: 'none'
+    },
+    '@media(max-height: 519px)': {
       display: 'none'
     }
   }
