@@ -1,4 +1,4 @@
-import { Box, Grid, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
 export const SideMenuBody = styled(motion.div)(({ theme }) => ({

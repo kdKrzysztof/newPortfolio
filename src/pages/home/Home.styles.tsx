@@ -51,7 +51,8 @@ export const HomeDescContainer = styled(Box)(({ theme }) => ({
   },
   '@media(max-height: 519px)': {
     width: '100%'
-  }
+  },
+  zIndex: 2
 }));
 
 export const HomeGraphics = styled(Box)(({ theme }) => ({

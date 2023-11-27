@@ -1,9 +1,10 @@
 export const sidebarBackground = {
   show: {
     opacity: 1,
-    zIndex: 2
+    zIndex: 3
   },
   hide: {
-    opacity: 0
+    opacity: 0,
+    zIndex: 1
   }
 };
