@@ -44,7 +44,7 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
             <ChangeThemeButton />
           </SideMenuHeader>
           <Divider sx={{ marginBottom: 2 }} />
-          <SideMenuContent id="gowno">
+          <SideMenuContent>
             <NavLinksSidebar />
             <OffsiteLinks />
           </SideMenuContent>
