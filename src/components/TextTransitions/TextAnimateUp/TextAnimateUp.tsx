@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 interface ITextAnimateUp {
@@ -16,18 +17,26 @@ const defaultAnimation = {
   }
 };
 
+/**
+ * Staggered text animation component using Material-UI Typography and framer-motion.
+ * Each letter transitions from an initial state of opacity 0 and y = -20 to a visible state
+ * with opacity 1 and y = 0.
+ */
+
 const TextAnimateUp = ({ text }: ITextAnimateUp) => {
   return (
-    <motion.span initial="hidden" animate="visible" transition={{ staggerChildren: 0.1 }}>
+    <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.1 }}>
       {text.split('').map((char) => (
-        <motion.span
+        <Typography
+          variant="h1"
+          component={motion.span}
           key={char}
           variants={defaultAnimation}
           transition={{ ease: 'easeOut', opacity: { duration: 1 } }}>
           {char}
-        </motion.span>
+        </Typography>
       ))}
-    </motion.span>
+    </motion.div>
   );
 };
 
