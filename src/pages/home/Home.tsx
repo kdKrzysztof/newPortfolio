@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import HomeCharacter from 'src/../public/HomeCharacter.svg';
+import HomeCharacter from '/HomeCharacter.svg';
 import { TextAnimateUpWord } from 'src/components/TextTransitions';
 
 import {
