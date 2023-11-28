@@ -5,8 +5,6 @@ import { Home, LoadingPage } from 'pages';
 
 import { useCustomTheme } from 'hooks';
 
-import { animationFinished } from 'store/reducers/loadingAnimationSlice';
-
 import { Navbar } from './components';
 import { useAppSelector } from './hooks/reduxHooks';
 
