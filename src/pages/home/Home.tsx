@@ -25,7 +25,12 @@ const Home = () => {
         <HomeContent>
           <HomeDescContainer>
             <HomeMainTitle variant="h3">{t('MainTitle')}</HomeMainTitle>
-            <TextAnimateUp text={t('MainDesc')} textVariant="h5" splitBy="word" />
+            <TextAnimateUp
+              text={t('MainDesc')}
+              textVariant="h5"
+              splitBy="word"
+              staggerTime={0.075}
+            />
             <HomeButtonContainer>
               <Button variant="contained">About me</Button>
               <Button variant="outlined">Contact with me</Button>
