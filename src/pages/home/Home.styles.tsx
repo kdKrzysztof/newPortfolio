@@ -1,6 +1,6 @@
-import { Box, Button, Typography, styled } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 
-export const HomeContainer = styled(Box)(({ theme }) => ({
+export const HomeContainer = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -11,12 +11,12 @@ export const HomeContainer = styled(Box)(({ theme }) => ({
   height: '100vh',
   backgroundColor: 'transparent',
   overflowX: 'hidden'
-}));
+});
 
-export const HomeMainTitle = styled(Typography)(({ theme }) => ({
+export const HomeMainTitle = styled(Typography)({
   textAlign: 'left',
   marginBottom: 20
-}));
+});
 
 export const HomeContent = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -83,10 +83,10 @@ export const HomeGraphics = styled(Box)(({ theme }) => ({
   }
 }));
 
-export const HomeButtonContainer = styled(Box)(({ theme }) => ({
+export const HomeButtonContainer = styled(Box)({
   width: '100%',
   marginTop: 20,
   button: {
     marginRight: 10
   }
-}));
+});
