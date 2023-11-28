@@ -1,2 +1,1 @@
-export { default as TextAnimateUpLetter } from './TextAnimateUpLetter';
-export { default as TextAnimateUpWord } from './TextAnimateUpWord';
+export { default as TextAnimateUp } from './TextAnimateUp';
