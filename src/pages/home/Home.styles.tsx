@@ -88,5 +88,11 @@ export const HomeButtonContainer = styled(Box)({
   marginTop: 20,
   button: {
     marginRight: 10
+  },
+  "@media (max-width:450px)": {
+    "& button": {
+      marginBottom: 5,
+      width: '100%'
+    }
   }
 });

@@ -15,7 +15,7 @@ function App() {
   );
   return (
     <ThemeProvider theme={theme}>
-      <LoadingPage on={true} />
+      <LoadingPage on={false} />
       <CssBaseline />
       {isAnimationFinished ? (
         <>
