@@ -1,4 +1,4 @@
-import { Variant } from '@mui/material/styles/createTypography';
+import type { Variant } from '@mui/material/styles/createTypography';
 import { motion } from 'framer-motion';
 import type { Dispatch, SetStateAction } from 'react';
 
