@@ -1,4 +1,5 @@
 import { Box, Typography, styled } from '@mui/material';
+import { motion } from 'framer-motion';
 
 export const HomeContainer = styled(Box)({
   display: 'flex',
@@ -83,7 +84,7 @@ export const HomeGraphics = styled(Box)(({ theme }) => ({
   }
 }));
 
-export const HomeButtonContainer = styled(Box)({
+export const HomeButtonContainer = styled(motion.div)({
   width: '100%',
   marginTop: 20,
   button: {

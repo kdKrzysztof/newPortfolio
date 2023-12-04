@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TextAnimateUp } from 'src/components/TextTransitions';
@@ -12,13 +12,14 @@ import {
   HomeGraphics,
   HomeMainTitle
 } from './Home.styles';
+import { defaultAnimation } from './framer/animation';
 import HomeCharacter from '/HomeCharacter.svg';
 
 const VantaBackground = lazy(() => import('components/VantaBackground'));
 
 const Home = () => {
   const { t } = useTranslation();
-
+  const [textAnimateComplete, setTextAnimateComplete] = useState(false);
   return (
     <>
       <HomeContainer>
@@ -30,8 +31,12 @@ const Home = () => {
               textVariant="h5"
               splitBy="word"
               staggerTime={0.075}
+              isCompleted={setTextAnimateComplete}
             />
-            <HomeButtonContainer>
+            <HomeButtonContainer
+              variants={defaultAnimation}
+              initial="hidden"
+              animate={textAnimateComplete ? 'visible' : 'hidden'}>
               <Button variant="contained">About me</Button>
               <Button variant="outlined">Contact with me</Button>
             </HomeButtonContainer>
