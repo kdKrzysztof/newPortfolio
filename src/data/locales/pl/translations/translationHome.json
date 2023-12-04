@@ -1,4 +1,6 @@
 {
   "MainTitle": "Cześć! Witam na mojej stronie",
-  "MainDesc": "Nazywam się Krzysztof Kudzia, jestem Front-end Developerem. Moim celem jest nieustanne poszerzanie umiejętności programistycznych, aby tworzyć nowoczesne i efektywne strony internetowe."
+  "MainDesc": "Nazywam się Krzysztof Kudzia, jestem Front-end Developerem. Moim celem jest nieustanne poszerzanie umiejętności programistycznych, aby tworzyć nowoczesne i efektywne strony internetowe.",
+  "HomeButtonAboutMe": "O mnie",
+  "HomeButtonContact": "Skontaktuj się ze mną"
 }

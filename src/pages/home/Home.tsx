@@ -37,8 +37,8 @@ const Home = () => {
               variants={defaultAnimation}
               initial="hidden"
               animate={textAnimateComplete ? 'visible' : 'hidden'}>
-              <Button variant="contained">About me</Button>
-              <Button variant="outlined">Contact with me</Button>
+              <Button variant="contained">{t('HomeButtonAboutMe')}</Button>
+              <Button variant="outlined">{t('HomeButtonContact')}</Button>
             </HomeButtonContainer>
           </HomeDescContainer>
           <HomeGraphics>
