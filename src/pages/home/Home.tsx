@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import { Suspense, lazy, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,6 +12,7 @@ import {
   HomeMainTitle
 } from './Home.styles';
 import { defaultAnimation } from './framer/animation';
+import HomeButton from './subcomponents/HomeButton';
 import HomeCharacter from '/HomeCharacter.svg';
 
 const VantaBackground = lazy(() => import('components/VantaBackground'));
@@ -36,9 +36,10 @@ const Home = () => {
             <HomeButtonContainer
               variants={defaultAnimation}
               initial="hidden"
-              animate={textAnimateComplete ? 'visible' : 'hidden'}>
-              <Button variant="contained">{t('HomeButtonAboutMe')}</Button>
-              <Button variant="outlined">{t('HomeButtonContact')}</Button>
+              animate={textAnimateComplete ? 'visible' : 'hidden'}
+              transition={{ staggerChildren: 0.25 }}>
+              <HomeButton text={t('HomeButtonAboutMe')} variant="contained" />
+              <HomeButton text={t('HomeButtonContact')} variant="outlined" />
             </HomeButtonContainer>
           </HomeDescContainer>
           <HomeGraphics>

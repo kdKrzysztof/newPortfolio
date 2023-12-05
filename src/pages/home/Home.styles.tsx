@@ -35,7 +35,7 @@ export const HomeContent = styled(Box)(({ theme }) => ({
   }
 }));
 
-export const HomeDescContainer = styled(Box)(({ theme }) => ({
+export const HomeDescContainer = styled(motion.div)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -90,8 +90,8 @@ export const HomeButtonContainer = styled(motion.div)({
   button: {
     marginRight: 10
   },
-  "@media (max-width:450px)": {
-    "& button": {
+  '@media (max-width:450px)': {
+    '& button': {
       marginBottom: 5,
       width: '100%'
     }
