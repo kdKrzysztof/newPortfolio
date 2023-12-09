@@ -1,6 +1,7 @@
 {
-  "MainTitle": "Hi! Welcome to my website",
-  "MainDesc": "My name is Krzysztof Kudzia, and I am a Front-end Developer. My goal is to continuously expand my programming skills to create modern and efficient websites.",
+  "MainTitleH3": "Hi! My name is",
+  "MainTitleH1": "Krzysztof Kudzia",
+  "MainDesc": "I am a front-end developer",
   "HomeButtonAboutMe": "About me",
   "HomeButtonContact": "Contact with me"
 }
