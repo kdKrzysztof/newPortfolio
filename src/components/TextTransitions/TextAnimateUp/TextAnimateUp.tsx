@@ -9,7 +9,7 @@ interface ITextAnimateUp {
   textVariant?: Variant;
   splitBy: 'word' | 'letter';
   staggerTime?: number;
-  isCompleted: Dispatch<SetStateAction<boolean>>;
+  isCompleted?: Dispatch<SetStateAction<boolean>>;
 }
 
 /**
@@ -32,7 +32,7 @@ const TextAnimateUp = ({
       animate="visible"
       transition={staggerTime ? { staggerChildren: staggerTime } : { staggerChildren: 0.1 }}
       onAnimationComplete={() => {
-        isCompleted(true);
+        isCompleted ? isCompleted(true) : true;
       }}>
       {splitBy === 'word' ? wordAnimation() : letterAnimation()}
     </motion.div>

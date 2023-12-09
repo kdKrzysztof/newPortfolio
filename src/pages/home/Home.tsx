@@ -21,36 +21,40 @@ const Home = () => {
   const { t } = useTranslation();
   const [textAnimateComplete, setTextAnimateComplete] = useState(false);
   return (
-    <>
-      <HomeContainer>
-        <HomeContent>
-          <HomeDescContainer>
-            <HomeMainTitle variant="h3">{t('MainTitle')}</HomeMainTitle>
-            <TextAnimateUp
-              text={t('MainDesc')}
-              textVariant="h5"
-              splitBy="word"
-              staggerTime={0.075}
-              isCompleted={setTextAnimateComplete}
-            />
-            <HomeButtonContainer
-              variants={defaultAnimation}
-              initial="hidden"
-              animate={textAnimateComplete ? 'visible' : 'hidden'}
-              transition={{ staggerChildren: 0.25 }}>
-              <HomeButton text={t('HomeButtonAboutMe')} variant="contained" />
-              <HomeButton text={t('HomeButtonContact')} variant="outlined" />
-            </HomeButtonContainer>
-          </HomeDescContainer>
-          <HomeGraphics>
-            <img src={HomeCharacter} />
-          </HomeGraphics>
-        </HomeContent>
-        <Suspense fallback={<></>}>
-          <VantaBackground />
-        </Suspense>
-      </HomeContainer>
-    </>
+    <HomeContainer>
+      <HomeContent>
+        <HomeDescContainer>
+          <HomeMainTitle variant="h5">{t('MainTitleH3')}</HomeMainTitle>
+          <TextAnimateUp
+            text={t('MainTitleH1')}
+            textVariant="h1"
+            splitBy="word"
+            staggerTime={0.5}
+          />
+          <TextAnimateUp
+            text={t('MainDesc')}
+            textVariant="h4"
+            splitBy="word"
+            staggerTime={0.075}
+            isCompleted={setTextAnimateComplete}
+          />
+          <HomeButtonContainer
+            variants={defaultAnimation}
+            initial="hidden"
+            animate={textAnimateComplete ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.25 }}>
+            <HomeButton text={t('HomeButtonAboutMe')} variant="contained" />
+            <HomeButton text={t('HomeButtonContact')} variant="outlined" />
+          </HomeButtonContainer>
+        </HomeDescContainer>
+        <HomeGraphics>
+          <img src={HomeCharacter} />
+        </HomeGraphics>
+      </HomeContent>
+      <Suspense fallback={<></>}>
+        <VantaBackground />
+      </Suspense>
+    </HomeContainer>
   );
 };
 

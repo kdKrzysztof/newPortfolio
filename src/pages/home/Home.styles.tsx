@@ -10,13 +10,13 @@ export const HomeContainer = styled(Box)({
   position: 'relative',
   width: '100vw',
   height: '100vh',
+  minHeight: '400px',
   backgroundColor: 'transparent',
   overflowX: 'hidden'
 });
 
 export const HomeMainTitle = styled(Typography)({
-  textAlign: 'left',
-  marginBottom: 20
+  textAlign: 'left'
 });
 
 export const HomeContent = styled(Box)(({ theme }) => ({
