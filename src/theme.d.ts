@@ -5,16 +5,22 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     NavbarZindex?: number;
     AppbarBackground?: React.CSSProperties['backgroundColor'];
+    AppbarBackgroundTransparent?: React.CSSProperties['backgroundColor'];
     VantaBackgroundColor?: React.CSSProperties['backgroundColor'];
   }
 
   interface Palette {
     NavbarZindex: number;
     AppbarBackground: React.CSSProperties['backgroundColor'];
+    AppbarBackgroundTransparent: React.CSSProperties['backgroundColor'];
     VantaBackgroundColor: React.CSSProperties['backgroundColor'];
   }
 
   interface Theme {
+    NavbarZindex: number;
+  }
+
+  interface ThemeOptions {
     NavbarZindex: number;
   }
 

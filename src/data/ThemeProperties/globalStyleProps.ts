@@ -11,7 +11,7 @@ const globalStyleProps: ThemeOptions = {
       minHeight: '64px'
     }
   },
-  NavbarZindex: 2
+  NavbarZindex: 98
 } as ThemeOptions;
 
 export default globalStyleProps;

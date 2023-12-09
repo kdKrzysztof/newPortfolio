@@ -7,7 +7,8 @@ const light: PaletteOptions = {
   primary: {
     main: 'rgb(0, 173, 181)'
   },
-  AppbarBackground: 'rgba(12, 15, 18, .25)',
+  AppbarBackgroundTransparent: 'rgba(12, 15, 18, .25)',
+  AppbarBackground: 'rgb(12, 15, 18)',
   VantaBackgroundColor: 'rgb(155, 155, 155)'
 } as PaletteOptions;
 
