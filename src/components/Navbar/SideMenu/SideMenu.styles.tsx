@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 export const SideMenuBody = styled(motion.div)(({ theme }) => ({
   display: 'flex',
-  position: 'absolute',
+  position: 'fixed',
   flexDirection: 'column',
-  height: '100%',
+  height: '100vh',
   background: theme.palette.VantaBackgroundColor,
   zIndex: 4,
   [theme.breakpoints.down('md')]: {
@@ -17,7 +17,7 @@ export const SideMenuBody = styled(motion.div)(({ theme }) => ({
 }));
 
 export const SideMenuBackgroundBlur = styled(motion.div)(({ theme }) => ({
-  position: 'absolute',
+  position: 'fixed',
   width: '100vw',
   height: '100vh',
   background: theme.palette.AppbarBackground,
@@ -48,4 +48,8 @@ export const SideMenuContent = styled(Box)({
   flexDirection: 'column',
   justifyContent: 'space-between',
   flexGrow: 1
+});
+
+export const SideMenuContainer = styled(motion.div)({
+  position: 'absolute'
 });
