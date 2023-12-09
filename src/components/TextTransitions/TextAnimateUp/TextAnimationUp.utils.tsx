@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import type { Variant } from '@mui/material/styles/createTypography';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
 import { WordContainer } from './TextAnimateUp.styles';
 import { defaultAnimation } from './framer/animations';
@@ -8,9 +9,10 @@ import { defaultAnimation } from './framer/animations';
 interface ITextAnimateUp {
   text: string;
   textVariant?: Variant;
+  startAfter?: boolean;
 }
 
-const useTextAnimationUp = ({ text, textVariant }: ITextAnimateUp) => {
+const useTextAnimationUp = ({ text, textVariant, startAfter }: ITextAnimateUp) => {
   const wordAnimation = () =>
     text.split(' ').map((word, index) => (
       <Typography
@@ -42,7 +44,18 @@ const useTextAnimationUp = ({ text, textVariant }: ITextAnimateUp) => {
       );
     });
 
-  return { wordAnimation, letterAnimation };
+  const controls = useAnimation();
+
+  const animate = async () => {
+    controls.set('hidden');
+    startAfter && controls.start('visible');
+  };
+
+  useEffect(() => {
+    animate();
+  }, [controls, startAfter]);
+
+  return { wordAnimation, letterAnimation, controls };
 };
 
 export default useTextAnimationUp;

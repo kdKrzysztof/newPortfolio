@@ -19,7 +19,8 @@ const VantaBackground = lazy(() => import('components/VantaBackground'));
 
 const Home = () => {
   const { t } = useTranslation();
-  const [textAnimateComplete, setTextAnimateComplete] = useState(false);
+  const [descAnimateComplete, setDescAnimateComplete] = useState(false);
+  const [titleAnimateComplete, setTitleAnimateComplete] = useState(false);
   return (
     <HomeContainer>
       <HomeContent>
@@ -29,19 +30,21 @@ const Home = () => {
             text={t('MainTitleH1')}
             textVariant="h1"
             splitBy="word"
-            staggerTime={0.5}
+            staggerTime={0.4}
+            isCompleted={setTitleAnimateComplete}
           />
           <TextAnimateUp
             text={t('MainDesc')}
             textVariant="h4"
             splitBy="word"
             staggerTime={0.075}
-            isCompleted={setTextAnimateComplete}
+            startAfter={titleAnimateComplete}
+            isCompleted={setDescAnimateComplete}
           />
           <HomeButtonContainer
             variants={defaultAnimation}
             initial="hidden"
-            animate={textAnimateComplete ? 'visible' : 'hidden'}
+            animate={descAnimateComplete ? 'visible' : 'hidden'}
             transition={{ staggerChildren: 0.25 }}>
             <HomeButton text={t('HomeButtonAboutMe')} variant="contained" />
             <HomeButton text={t('HomeButtonContact')} variant="outlined" />

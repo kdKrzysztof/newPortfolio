@@ -6,7 +6,7 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   justifyContent: 'center',
   position: 'fixed',
   width: '100%',
-  height: '100%',
+  height: 'auto',
   paddingBottom: 10,
   zIndex: theme.NavbarZindex
 }));
