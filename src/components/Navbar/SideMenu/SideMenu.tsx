@@ -1,5 +1,4 @@
 import { Divider } from '@mui/material';
-import { motion } from 'framer-motion';
 
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHooks';
@@ -13,6 +12,7 @@ import {
   CloseButtonGrid,
   SideMenuBackgroundBlur,
   SideMenuBody,
+  SideMenuContainer,
   SideMenuContent,
   SideMenuHeader
 } from './SideMenu.styles';
@@ -28,13 +28,13 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
 
   return isBelowWidthBreakpoint ? (
     <>
-      <SideMenuBackgroundBlur
-        initial={'hide'}
-        animate={menuState ? 'show' : 'hide'}
-        variants={sidebarBackground}
-        onClick={() => dispatch(closeNav())}
-      />
-      <motion.div initial={false} animate={menuState ? 'open' : 'closed'}>
+      <SideMenuContainer initial={false} animate={menuState ? 'open' : 'closed'}>
+        <SideMenuBackgroundBlur
+          initial={'hide'}
+          animate={menuState ? 'show' : 'hide'}
+          variants={sidebarBackground}
+          onClick={() => dispatch(closeNav())}
+        />
         <SideMenuBody variants={sidebar}>
           <CloseButtonGrid>
             <OpenMenuButton icon="close" />
@@ -49,7 +49,7 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
             <OffsiteLinks />
           </SideMenuContent>
         </SideMenuBody>
-      </motion.div>
+      </SideMenuContainer>
     </>
   ) : null;
 };
