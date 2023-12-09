@@ -11,7 +11,13 @@ export const StyledHeader = styled('header')(({ theme }) => ({
   zIndex: theme.NavbarZindex
 }));
 
-export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+interface StyledToolbarProps {
+  changeBg: boolean;
+}
+
+export const StyledToolbar = styled(Toolbar, {
+  shouldForwardProp: (prop) => prop !== 'changeBg'
+})<StyledToolbarProps>(({ theme, changeBg }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -19,7 +25,8 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   height: '100%',
   padding: '0 !important',
   maxHeight: theme.mixins.toolbar.minHeight,
-  // background: theme.palette.AppbarBackground,
+  background: changeBg ? theme.palette.background.default : 'transparent',
   backdropFilter: 'blur(10px)',
-  WebkitBackdropFilter: 'blur(10px)'
+  WebkitBackdropFilter: 'blur(10px)',
+  transition: 'background 200ms'
 }));
