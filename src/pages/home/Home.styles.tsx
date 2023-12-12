@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 import { motion } from 'framer-motion';
 
 export const HomeContainer = styled(Box)({
@@ -15,10 +15,6 @@ export const HomeContainer = styled(Box)({
   overflowX: 'hidden'
 });
 
-export const HomeMainTitle = styled(Typography)({
-  textAlign: 'left'
-});
-
 export const HomeContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
@@ -31,7 +27,7 @@ export const HomeContent = styled(Box)(({ theme }) => ({
     justifyContent: 'flex-end'
   },
   [theme.breakpoints.down('sm')]: {
-    minWidth: '90%'
+    minWidth: '80%'
   }
 }));
 

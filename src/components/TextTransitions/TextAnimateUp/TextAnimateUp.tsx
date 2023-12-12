@@ -1,14 +1,16 @@
 import type { Variant } from '@mui/material/styles/createTypography';
 import { motion } from 'framer-motion';
-import { type Dispatch, type SetStateAction } from 'react';
+import type { CSSProperties, Dispatch, SetStateAction } from 'react';
 
 import useTextAnimationUp from './TextAnimationUp.utils';
 
 interface ITextAnimateUp {
   text: string;
   textVariant?: Variant;
-  splitBy: 'word' | 'letter';
+  color?: CSSProperties['color'];
+  splitBy?: 'word' | 'letter' | undefined;
   staggerTime?: number;
+  animationSpeed?: number | undefined;
   startAfter?: boolean | true;
   isCompleted?: Dispatch<SetStateAction<boolean>>;
 }
@@ -22,25 +24,41 @@ interface ITextAnimateUp {
  * @param splitBy Text splitting type
  * @param staggerTime A delay to each word/letter animation
  * @param startAfter A boolean to check whenever text animation needs to wait for other animation to finish
+ * @param animationSpeed Text animation speed, transition time
  * @param isCompleted Passed boolean useState to return true, whenever whole animation is finished
  */
 
 const TextAnimateUp = ({
   text,
   textVariant,
+  color,
   splitBy,
   staggerTime,
   startAfter = true,
+  animationSpeed,
   isCompleted
 }: ITextAnimateUp) => {
-  const { wordAnimation, letterAnimation, controls } = useTextAnimationUp({
+  const { wordAnimation, letterAnimation, textAnimation, controls } = useTextAnimationUp({
     text,
+    color,
     textVariant,
-    startAfter
+    startAfter,
+    animationSpeed
   });
 
   const onAnimationComplete = () => {
     isCompleted && isCompleted(true);
+  };
+
+  const textAnimationSelector = (splitBy: ITextAnimateUp['splitBy']) => {
+    switch (splitBy) {
+      case 'word':
+        return wordAnimation();
+      case 'letter':
+        return letterAnimation();
+      default:
+        return textAnimation();
+    }
   };
 
   return (
@@ -49,7 +67,7 @@ const TextAnimateUp = ({
       animate={controls}
       transition={staggerTime ? { staggerChildren: staggerTime } : { staggerChildren: 0.1 }}
       onAnimationComplete={onAnimationComplete}>
-      {splitBy === 'word' ? wordAnimation() : letterAnimation()}
+      {textAnimationSelector(splitBy)}
     </motion.div>
   );
 };

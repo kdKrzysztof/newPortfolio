@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TextAnimateUp } from 'src/components/TextTransitions';
@@ -9,37 +9,44 @@ import {
   HomeContent,
   HomeDescContainer,
   HomeGraphics,
-  HomeMainTitle
 } from './Home.styles';
 import { defaultAnimation } from './framer/animation';
 import HomeButton from './subcomponents/HomeButton';
 import HomeCharacter from '/HomeCharacter.svg';
 
-const VantaBackground = lazy(() => import('components/VantaBackground'));
-
 const Home = () => {
   const { t } = useTranslation();
+  const [aboveTitleAnimateComplete, setAboveTitleAnimateComplete] = useState(false);
   const [descAnimateComplete, setDescAnimateComplete] = useState(false);
   const [titleAnimateComplete, setTitleAnimateComplete] = useState(false);
   return (
     <HomeContainer>
       <HomeContent>
         <HomeDescContainer>
-          <HomeMainTitle variant="h5">{t('MainTitleH3')}</HomeMainTitle>
+          <TextAnimateUp
+            text={t('MainTitleH3')}
+            textVariant="h5"
+            animationSpeed={0.5}
+            isCompleted={setAboveTitleAnimateComplete}
+            color="primary"
+          />
           <TextAnimateUp
             text={t('MainTitleH1')}
             textVariant="h1"
             splitBy="word"
             staggerTime={0.4}
+            animationSpeed={0.5}
+            startAfter={aboveTitleAnimateComplete}
             isCompleted={setTitleAnimateComplete}
           />
           <TextAnimateUp
             text={t('MainDesc')}
             textVariant="h4"
             splitBy="word"
-            staggerTime={0.075}
+            staggerTime={0.05}
             startAfter={titleAnimateComplete}
             isCompleted={setDescAnimateComplete}
+            animationSpeed={1}
           />
           <HomeButtonContainer
             variants={defaultAnimation}
@@ -54,9 +61,6 @@ const Home = () => {
           <img src={HomeCharacter} />
         </HomeGraphics>
       </HomeContent>
-      <Suspense fallback={<></>}>
-        <VantaBackground />
-      </Suspense>
     </HomeContainer>
   );
 };
