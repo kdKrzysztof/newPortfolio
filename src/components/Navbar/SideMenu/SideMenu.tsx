@@ -1,5 +1,3 @@
-import { Divider } from '@mui/material';
-
 import { ChangeLanguageButton, ChangeThemeButton } from 'src/components';
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHooks';
 
@@ -43,7 +41,6 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
             <ChangeLanguageButton />
             <ChangeThemeButton />
           </SideMenuHeader>
-          <Divider sx={{ marginBottom: 2 }} />
           <SideMenuContent>
             <NavLinksSidebar />
             <OffsiteLinks />
