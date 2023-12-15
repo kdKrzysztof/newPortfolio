@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { type SxProps, type Theme, Typography } from '@mui/material';
 import type { Variant } from '@mui/material/styles/createTypography';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
@@ -13,6 +13,7 @@ interface ITextAnimateUp {
   color: CSSProperties['color'];
   startAfter?: boolean;
   animationSpeed: number | undefined;
+  sx?: SxProps<Theme>;
 }
 
 const useTextAnimationUp = ({
@@ -20,60 +21,41 @@ const useTextAnimationUp = ({
   textVariant,
   startAfter,
   animationSpeed,
-  color
+  color,
+  sx
 }: ITextAnimateUp) => {
-  const wordAnimation = () =>
-    text.split(' ').map((word, index) => (
-      <Typography
-        variant={textVariant}
-        component={motion.span}
-        color={color}
-        key={word + index}
-        variants={defaultAnimation}
-        transition={{ ease: 'easeOut', opacity: { duration: animationSpeed } }}>
-        {word + `\u00A0`}
-      </Typography>
-    ));
+  const typography = (text: string, index?: string | number) => (
+    <Typography
+      sx={sx}
+      variant={textVariant}
+      component={motion.span}
+      color={color}
+      key={text + index}
+      variants={defaultAnimation}
+      transition={{ ease: 'easeOut', opacity: { duration: animationSpeed } }}>
+      {text + `\u00A0`}
+    </Typography>
+  );
+
+  const wordAnimation = () => text.split(' ').map((word, index) => typography(word, index));
 
   const letterAnimation = () =>
     text.split(' ').map((word, wordIndex) => {
       let wordWithSpace = word + `\u00A0`;
       return (
         <WordContainer id={word} key={word + wordIndex}>
-          {wordWithSpace.split('').map((letter, letterIndex) => (
-            <Typography
-              variant={textVariant}
-              color={color}
-              component={motion.span}
-              key={letter + letterIndex + word}
-              variants={defaultAnimation}
-              transition={{ ease: 'easeOut', opacity: { duration: animationSpeed } }}>
-              {letter}
-            </Typography>
-          ))}
+          {wordWithSpace.split('').map((letter, letterIndex) => typography(letter, letterIndex))}
         </WordContainer>
       );
     });
 
-  const textAnimation = () => (
-    <Typography
-      variant={textVariant}
-      color={color}
-      component={motion.span}
-      key={text}
-      variants={defaultAnimation}
-      transition={{ ease: 'easeOut', opacity: { duration: animationSpeed } }}>
-      {text}
-    </Typography>
-  );
+  const textAnimation = () => typography(text);
 
   const controls = useAnimation();
-
   const animate = async () => {
     controls.set('hidden');
     startAfter && controls.start('visible');
   };
-
   useEffect(() => {
     animate();
   }, [controls, startAfter]);
