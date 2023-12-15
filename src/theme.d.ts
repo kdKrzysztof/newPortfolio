@@ -26,10 +26,12 @@ declare module '@mui/material/styles' {
 
   interface TypographyVariants {
     navLinks: React.CSSProperties;
+    homeMainTitle: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     navLinks?: React.CSSProperties;
+    homeMainTitle?: React.CSSProperties;
   }
 }
 

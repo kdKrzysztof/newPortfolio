@@ -21,6 +21,7 @@ export const StyledLink = styled('a')(({ theme }) => ({
   marginLeft: theme.spacing(2),
   marginRight: theme.spacing(2),
   fontSize: theme.typography?.navLinks.fontSize,
+  fontFamily: theme.typography?.navLinks.fontFamily,
 
   [theme.breakpoints.down('md')]: {
     marginTop: 10,

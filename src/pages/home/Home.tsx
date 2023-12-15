@@ -1,3 +1,5 @@
+import { useTheme } from '@mui/material';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,9 +10,9 @@ import {
   HomeContainer,
   HomeContent,
   HomeDescContainer,
-  HomeGraphics,
+  HomeGraphics
 } from './Home.styles';
-import { defaultAnimation } from './framer/animation';
+import { defaultAnimation, imageAnimation } from './framer/animation';
 import HomeButton from './subcomponents/HomeButton';
 import HomeCharacter from '/HomeCharacter.svg';
 
@@ -19,6 +21,8 @@ const Home = () => {
   const [aboveTitleAnimateComplete, setAboveTitleAnimateComplete] = useState(false);
   const [descAnimateComplete, setDescAnimateComplete] = useState(false);
   const [titleAnimateComplete, setTitleAnimateComplete] = useState(false);
+  const theme = useTheme();
+  
   return (
     <HomeContainer>
       <HomeContent>
@@ -35,9 +39,10 @@ const Home = () => {
             textVariant="h1"
             splitBy="word"
             staggerTime={0.4}
-            animationSpeed={0.5}
+            animationSpeed={0.25}
             startAfter={aboveTitleAnimateComplete}
             isCompleted={setTitleAnimateComplete}
+            sx={{ fontWeight: theme.typography.homeMainTitle.fontWeight }}
           />
           <TextAnimateUp
             text={t('MainDesc')}
@@ -58,7 +63,12 @@ const Home = () => {
           </HomeButtonContainer>
         </HomeDescContainer>
         <HomeGraphics>
-          <img src={HomeCharacter} />
+          <motion.img
+            src={HomeCharacter}
+            variants={imageAnimation}
+            initial="initial"
+            animate={aboveTitleAnimateComplete && 'default'}
+          />
         </HomeGraphics>
       </HomeContent>
     </HomeContainer>
