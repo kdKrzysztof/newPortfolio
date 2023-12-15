@@ -68,7 +68,7 @@ export const HomeGraphics = styled(Box)(({ theme }) => ({
     '@media(max-width: 771px)': {
       width: '250px'
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none'
     },
     '@media(max-height: 635px) and (max-width: 899px)': {
