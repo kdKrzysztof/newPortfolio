@@ -24,6 +24,7 @@ export const StyledToolbar = styled(Toolbar, {
   width: '100%',
   height: '100%',
   padding: '0 !important',
+  paddingTop: '30px !important',
   maxHeight: theme.mixins.toolbar.minHeight,
   background: changeBg ? theme.palette.background.default : 'transparent',
   backdropFilter: 'blur(10px)',
