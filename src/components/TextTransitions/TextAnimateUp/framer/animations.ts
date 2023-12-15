@@ -1,4 +1,6 @@
-export const defaultAnimation = {
+import type { Variants } from 'framer-motion';
+
+export const defaultAnimation: Variants = {
   visible: {
     opacity: 1,
     y: 0
