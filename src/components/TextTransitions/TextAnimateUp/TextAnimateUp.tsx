@@ -1,3 +1,4 @@
+import type { SxProps, Theme } from '@mui/material';
 import type { Variant } from '@mui/material/styles/createTypography';
 import { motion } from 'framer-motion';
 import type { CSSProperties, Dispatch, SetStateAction } from 'react';
@@ -13,6 +14,7 @@ interface ITextAnimateUp {
   animationSpeed?: number | undefined;
   startAfter?: boolean | true;
   isCompleted?: Dispatch<SetStateAction<boolean>>;
+  sx?: SxProps<Theme>;
 }
 
 /**
@@ -36,14 +38,16 @@ const TextAnimateUp = ({
   staggerTime,
   startAfter = true,
   animationSpeed,
-  isCompleted
+  isCompleted,
+  sx
 }: ITextAnimateUp) => {
   const { wordAnimation, letterAnimation, textAnimation, controls } = useTextAnimationUp({
     text,
     color,
     textVariant,
     startAfter,
-    animationSpeed
+    animationSpeed,
+    sx
   });
 
   const onAnimationComplete = () => {
