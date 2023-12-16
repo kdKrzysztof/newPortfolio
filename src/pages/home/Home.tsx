@@ -22,7 +22,7 @@ const Home = () => {
   const [descAnimateComplete, setDescAnimateComplete] = useState(false);
   const [titleAnimateComplete, setTitleAnimateComplete] = useState(false);
   const theme = useTheme();
-  
+
   return (
     <HomeContainer>
       <HomeContent>
@@ -37,7 +37,6 @@ const Home = () => {
           <TextAnimateUp
             text={t('MainTitleH1')}
             textVariant="h1"
-            splitBy="word"
             staggerTime={0.4}
             animationSpeed={0.25}
             startAfter={aboveTitleAnimateComplete}
