@@ -56,7 +56,7 @@ export const HomeGraphics = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'flex-end',
   img: {
-    width: '380px',
+    width: '20svw',
     objectFit: 'contain',
     [theme.breakpoints.down('lg')]: {
       width: '280px'
