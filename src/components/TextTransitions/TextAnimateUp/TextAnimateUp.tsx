@@ -67,7 +67,7 @@ const TextAnimateUp = ({
 
   return (
     <motion.div
-      initial="hidden"
+      initial={!isCompleted && 'hidden'} // simple fix, not setting initial style when component is being rerendered because of language change
       animate={controls}
       transition={staggerTime ? { staggerChildren: staggerTime } : { staggerChildren: 0.1 }}
       onAnimationComplete={onAnimationComplete}>
