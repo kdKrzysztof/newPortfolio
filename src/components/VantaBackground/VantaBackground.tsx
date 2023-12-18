@@ -29,14 +29,20 @@ const VantaBackground = () => {
           shininess: 5,
           waveHeight: 6.0,
           waveSpeed: 0.5,
-          color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
+          color:
+            themeColor === 'dark'
+              ? dark.background && dark.background.VantaBackgroundColor
+              : light.background && light.background.VantaBackgroundColor
         })
       );
     }
 
     if (vantaEffect) {
       vantaEffect.setOptions({
-        color: themeColor === 'dark' ? dark.VantaBackgroundColor : light.VantaBackgroundColor
+        color:
+          themeColor === 'dark'
+            ? dark.background && dark.background.VantaBackgroundColor
+            : light.background && light.background.VantaBackgroundColor
       });
     }
   }, [themeColor]);

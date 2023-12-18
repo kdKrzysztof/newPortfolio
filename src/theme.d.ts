@@ -3,17 +3,29 @@ import type { PaletteOptions, Theme, ThemeOptions } from '@mui/material/styles/'
 
 declare module '@mui/material/styles' {
   interface PaletteOptions {
+    background: {
+      aboutMe: React.CSSProperties['backgroundColor'];
+      AppbarBackground?: React.CSSProperties['backgroundColor'];
+      AppbarBackgroundTransparent?: React.CSSProperties['backgroundColor'];
+      VantaBackgroundColor?: React.CSSProperties['backgroundColor'];
+    };
     NavbarZindex?: number;
+  }
+
+  interface TypeBackground {
+    aboutMe: React.CSSProperties['backgroundColor'];
     AppbarBackground?: React.CSSProperties['backgroundColor'];
     AppbarBackgroundTransparent?: React.CSSProperties['backgroundColor'];
     VantaBackgroundColor?: React.CSSProperties['backgroundColor'];
   }
 
   interface Palette {
+    background: {
+      AppbarBackground: React.CSSProperties['backgroundColor'];
+      AppbarBackgroundTransparent: React.CSSProperties['backgroundColor'];
+      VantaBackgroundColor: React.CSSProperties['backgroundColor'];
+    };
     NavbarZindex: number;
-    AppbarBackground: React.CSSProperties['backgroundColor'];
-    AppbarBackgroundTransparent: React.CSSProperties['backgroundColor'];
-    VantaBackgroundColor: React.CSSProperties['backgroundColor'];
   }
 
   interface Theme {
