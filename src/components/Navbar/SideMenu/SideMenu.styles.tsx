@@ -6,7 +6,7 @@ export const SideMenuBody = styled(motion.div)(({ theme }) => ({
   position: 'fixed',
   flexDirection: 'column',
   height: '100vh',
-  background: theme.palette.VantaBackgroundColor,
+  background: theme.palette.background.VantaBackgroundColor,
   zIndex: 4,
   [theme.breakpoints.down('md')]: {
     width: '300px'
