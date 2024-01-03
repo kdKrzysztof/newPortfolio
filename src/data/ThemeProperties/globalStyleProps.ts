@@ -14,7 +14,8 @@ const globalStyleProps: ThemeOptions = {
   mixins: {
     toolbar: {
       minHeight: '64px'
-    }
+    },
+    navbarButtonPadding: '15px !important'
   },
   NavbarZindex: 98
 } as ThemeOptions;
