@@ -36,6 +36,10 @@ declare module '@mui/material/styles' {
     NavbarZindex: number;
   }
 
+  interface Mixins {
+    navbarButtonPadding: string;
+  }
+
   interface TypographyVariants {
     navLinks: React.CSSProperties;
     homeMainTitle: React.CSSProperties;

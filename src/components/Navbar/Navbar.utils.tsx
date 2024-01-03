@@ -8,9 +8,10 @@ const useNavbar = () => {
   const theme = useTheme();
   const { scrollY } = useScroll();
   const [changeBg, setChangeBg] = useState(false);
+  const scrollHeightBreakpoint = 200;
 
   useMotionValueEvent(scrollY, 'change', (y) => {
-    if (y >= 100) {
+    if (y >= scrollHeightBreakpoint) {
       setChangeBg(true);
     } else {
       setChangeBg(false);

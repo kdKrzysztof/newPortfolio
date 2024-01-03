@@ -7,8 +7,8 @@ const Navbar = () => {
   const { changeBg, isBelowWidthBreakpoint } = useNavbar();
   return (
     <>
-      <StyledHeader>
-        <StyledToolbar changeBg={changeBg}>
+      <StyledHeader changeBg={changeBg}>
+        <StyledToolbar>
           <NavTopMenu isBelowWidthBreakpoint={isBelowWidthBreakpoint} />
         </StyledToolbar>
       </StyledHeader>
