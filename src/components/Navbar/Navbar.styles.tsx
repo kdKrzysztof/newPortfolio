@@ -26,6 +26,7 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
+  maxWidth: '1920px',
   height: '100%',
   padding: '0 !important',
   paddingTop: theme.mixins.navbarButtonPadding

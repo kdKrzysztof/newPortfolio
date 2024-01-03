@@ -10,6 +10,7 @@ export const HomeContainer = styled(Box)({
   position: 'relative',
   width: '100vw',
   height: '100vh',
+  maxHeight: '1440px',
   minHeight: '400px',
   backgroundColor: 'transparent',
   overflowX: 'hidden'
@@ -21,6 +22,7 @@ export const HomeContent = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '70%',
+  maxWidth: '1920px',
   [theme.breakpoints.down('md')]: {
     minWidth: '80%',
     flexDirection: 'column',
