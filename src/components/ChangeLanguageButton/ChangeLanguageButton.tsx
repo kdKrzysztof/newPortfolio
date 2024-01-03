@@ -32,7 +32,8 @@ const ChangeLanguageButton = () => {
         anchorOrigin={menuAnchorOrigin}
         transformOrigin={menuTransformOrigin}
         open={Boolean(anchorEl)}
-        onClose={closeMenu}>
+        onClose={closeMenu}
+        disableScrollLock={true}>
         <LanguageItem onClick={closeMenu} id="pl">
           {t('LangPL')}
         </LanguageItem>
