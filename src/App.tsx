@@ -27,7 +27,7 @@ function App() {
         <>
           <Navbar />
           <Home />
-          <AboutMe/>
+          <AboutMe />
         </>
       ) : null}
     </ThemeProvider>

@@ -12,7 +12,7 @@ export const StyledHeader = styled('header', {
   justifyContent: 'center',
   position: 'fixed',
   width: '100%',
-  height: 'auto',
+  minHeight: 'auto',
   paddingBottom: theme.mixins.navbarButtonPadding,
   background: changeBg ? theme.palette.background.AppbarBackground : 'transparent',
   backdropFilter: 'blur(10px)',
