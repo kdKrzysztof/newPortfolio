@@ -11,6 +11,8 @@
       "public": ["../public"],
       "src/*": ["./src/*"],
       "src": ["./src"],
+      "icons/*": ["./src/icons/*"],
+      "icons": ["./src/icons"],
       "components/*": ["./src/components/*"],
       "components": ["./src/components"],
       "pages/*": ["./src/pages/*"],
