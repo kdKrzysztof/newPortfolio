@@ -11,7 +11,11 @@ export const ImageContainer = styled(Box)({
   flexWrap: 'wrap'
 });
 
-export const ImageContent = styled(Box)({
+type ImageContentProp = {
+  themeColor: 'light' | 'dark';
+};
+
+export const ImageContent = styled(Box)<ImageContentProp>(({ themeColor }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -21,6 +25,7 @@ export const ImageContent = styled(Box)({
   '& > img': {
     maxWidth: '50px',
     minWidth: '50px',
-    filter: 'invert(100%)'
+    filter: themeColor == 'dark' ? 'invert(100%)' : 'invert(0%)',
+    color: 'red'
   }
-});
+}));

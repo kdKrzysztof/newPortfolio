@@ -3,8 +3,11 @@ import { Typography } from '@mui/material';
 import TechStack from 'data/techStack';
 
 import { ImageContainer, ImageContent, SkillsContent } from './Skills.styles';
+import { useAppSelector } from 'src/hooks/reduxHooks';
 
 const Skills = () => {
+  const themeColor = useAppSelector((state) => state.theme);
+  
   return (
     <SkillsContent>
       <Typography variant="h4" color="primary">
@@ -16,7 +19,7 @@ const Skills = () => {
       <ImageContainer>
         {TechStack.map((el) => {
           return (
-            <ImageContent key={el[0]}>
+            <ImageContent key={el[0]} themeColor={themeColor}>
               <img src={el[1]}></img>
               <Typography variant="subtitle2">{el[0]}</Typography>
             </ImageContent>
