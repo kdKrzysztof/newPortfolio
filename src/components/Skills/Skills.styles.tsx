@@ -15,7 +15,9 @@ type ImageContentProp = {
   themeColor: 'light' | 'dark';
 };
 
-export const ImageContent = styled(Box)<ImageContentProp>(({ themeColor }) => ({
+export const ImageContent = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'themeColor'
+})<ImageContentProp>(({ themeColor }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
