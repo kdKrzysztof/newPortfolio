@@ -1,7 +1,7 @@
-import React from 'react';
+import { ProjectBody } from './Project.styles';
 
 const Project = () => {
-  return <div>Project</div>;
+  return <ProjectBody>e</ProjectBody>;
 };
 
 export default Project;
