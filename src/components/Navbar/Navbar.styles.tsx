@@ -4,9 +4,7 @@ interface StyledHeaderProps {
   changeBg: boolean;
 }
 
-export const StyledHeader = styled('header', {
-  shouldForwardProp: (prop) => prop !== 'changeBg'
-})<StyledHeaderProps>(({ theme, changeBg }) => ({
+export const StyledHeader = styled('header')<StyledHeaderProps>(({ theme, changeBg }) => ({
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'center',
