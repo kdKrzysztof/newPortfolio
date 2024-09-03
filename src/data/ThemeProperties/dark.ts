@@ -6,7 +6,8 @@ const dark: PaletteOptions = {
     aboutMe: '#171c22',
     AppbarBackgroundTransparent: 'rgba(12, 15, 18, .45)',
     AppbarBackground: '#15191e',
-    VantaBackgroundColor: '#0c0f12'
+    VantaBackgroundColor: '#0c0f12',
+    ProjectsBackgroundColor: '#FFFFFF'
   },
   primary: {
     main: 'rgb(0, 173, 181)'

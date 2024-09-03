@@ -11,6 +11,7 @@ declare module '@mui/material/styles' {
     AppbarBackground?: React.CSSProperties['backgroundColor'];
     AppbarBackgroundTransparent?: React.CSSProperties['backgroundColor'];
     VantaBackgroundColor?: React.CSSProperties['backgroundColor'];
+    ProjectsBackgroundColor?: React.CSSProperties['backgroundColor'];
   }
 
   interface ThemeOptions extends Pick<PaletteOptions, 'NavbarZindex'> {}
