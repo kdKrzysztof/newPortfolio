@@ -2,7 +2,7 @@ import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { Suspense, lazy } from 'react';
 
-import { AboutMe, Home, LoadingPage } from 'pages';
+import { AboutMe, Home, LoadingPage, Projects } from 'pages';
 
 import { useCustomTheme } from 'hooks';
 
@@ -28,6 +28,7 @@ function App() {
           <Navbar />
           <Home />
           <AboutMe />
+          <Projects />
         </>
       ) : null}
     </ThemeProvider>
