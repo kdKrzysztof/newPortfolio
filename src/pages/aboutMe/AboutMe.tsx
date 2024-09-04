@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-import Skills from 'src/components/Skills/Skills';
+import { Skills } from 'components';
 
 import { AboutMeContent, AboutMeInnerContainer, AboutMeMainContainer } from './AboutMe.styles';
 
