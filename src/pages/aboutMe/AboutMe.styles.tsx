@@ -9,8 +9,8 @@ export const AboutMeMainContainer = styled(motion.section)(({ theme }) => ({
   alignItems: 'center',
   width: '100svw',
   height: 'auto',
-  paddingTop: 8,
-  paddingBottom: 8,
+  paddingTop: 40,
+  paddingBottom: 40,
   backgroundColor: theme.palette.background.aboutMe
 }));
 
@@ -30,7 +30,7 @@ export const AboutMeInnerContainer = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    // "&&" overrides existing style successfully
+    // "&&" overrides existing style successfully -- small note for myself
     '&& > *': {
       margin: 0
     },

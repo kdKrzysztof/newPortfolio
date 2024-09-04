@@ -1,9 +1,15 @@
 import { Project } from 'components';
 
-import { ProjectBody } from './Projects.styles';
+import { ProjectBody, ProjectContainer } from './Projects.styles';
 
 const Projects = () => {
-  return <ProjectBody></ProjectBody>;
+  return (
+    <ProjectBody>
+      <ProjectContainer>
+        <Project />
+      </ProjectContainer>
+    </ProjectBody>
+  );
 };
 
 export default Projects;
