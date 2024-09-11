@@ -26,22 +26,20 @@ export const SideMenuBackgroundBlur = styled(motion.div)({
 
 export const SideMenuHeader = styled(Box)(({ theme }) => ({
   display: 'flex',
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
   alignItems: 'center',
-  marginRight: 30,
-  marginBottom: 30,
-  paddingTop: '30px !important',
   height: theme.mixins.toolbar.minHeight
 }));
 
-export const CloseButtonGrid = styled(Box)(({ theme }) => ({
+export const SideMenuButtonsContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
   display: 'flex',
-  justifyContent: 'flex-start',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  width: '90vw',
+  width: '100%',
   paddingTop: theme.mixins.navbarButtonPadding,
   marginLeft: '5vw', // I have found no other solution to align close button to open menu button, while being separate buttons
+  paddingRight: '10vw',
   height: theme.mixins.toolbar.minHeight
 }));
 

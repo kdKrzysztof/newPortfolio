@@ -7,9 +7,9 @@ import { NavLinksSidebar } from '../NavLinks';
 import OffsiteLinks from '../OffsiteLinks';
 import OpenMenuButton from '../OpenMenuButton';
 import {
-  CloseButtonGrid,
   SideMenuBackgroundBlur,
   SideMenuBody,
+  SideMenuButtonsContainer,
   SideMenuContainer,
   SideMenuContent,
   SideMenuHeader
@@ -34,13 +34,14 @@ const SideMenu = ({ isBelowWidthBreakpoint }: ISideMenu) => {
           onClick={() => dispatch(closeNav())}
         />
         <SideMenuBody variants={sidebar}>
-          <CloseButtonGrid>
+          <SideMenuButtonsContainer>
             <OpenMenuButton icon="close" />
-          </CloseButtonGrid>
-          <SideMenuHeader>
-            <ChangeLanguageButton />
-            <ChangeThemeButton />
-          </SideMenuHeader>
+            <SideMenuHeader>
+              <ChangeLanguageButton />
+              <ChangeThemeButton />
+            </SideMenuHeader>
+          </SideMenuButtonsContainer>
+          <SideMenuHeader />
           <SideMenuContent>
             <NavLinksSidebar />
             <OffsiteLinks />
