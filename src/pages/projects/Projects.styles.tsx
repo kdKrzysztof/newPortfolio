@@ -1,35 +1,26 @@
 import { Box, styled } from '@mui/material';
+import zIndex from '@mui/material/styles/zIndex';
 
 export const ProjectBody = styled('section')(({ theme }) => ({
-  position: 'relative',
   width: '100svw',
   height: 'auto',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: theme.palette.background.ProjectsBackgroundColor,
-  color: theme.palette.primary.dark,
-  '&::before': {
-    position: 'absolute',
-    width: '100%',
-    height: '0.3rem',
-    top: 0,
-    backgroundColor: theme.palette.primary.dark,
-    content: `""`
-  },
-  '&::after': {
-    position: 'absolute',
-    width: '100%',
-    height: '0.3rem',
-    bottom: 0,
-    backgroundColor: theme.palette.primary.dark,
-    content: `""`
-  }
+  color: theme.palette.primary.dark
 }));
 
 export const ProjectContainer = styled(Box)({
   display: 'flex',
-  width: '70%',
+  width: '100%',
   height: '100%',
-  justifyContent: 'center'
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 2
+});
+
+export const ProjectHeader = styled(Box)({
+  width: '70%'
 });

@@ -1,32 +1,21 @@
 import { Box, styled } from '@mui/material';
 
-const ProjectDescMargin = 40;
-
-export const ProjectBody = styled(Box)({
+export const ProjectBody = styled(Box)(({ theme }) => ({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignItems: 'center',
   flexDirection: 'row',
-  marginTop: 40,
-  marginBottom: 40
-});
-
-export const ProjectDesc = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  '& > *:nth-of-type(1)': {
-    marginRight: ProjectDescMargin
-  },
-  '& > *:nth-of-type(2)': {
-    marginLeft: ProjectDescMargin
+  width: '70%',
+  height: '100vh',
+  minHeight: '200px',
+  maxHeight: '200px',
+  marginTop: 30,
+  marginBottom: 30,
+  [theme.breakpoints.down('md')]: {
+    width: '100%'
   }
-});
+}));
 
 export const ProjectImageContainer = styled(Box)({
-  height: 'auto',
-  minWidth: '500px'
-});
-
-export const ProjectHeader = styled(Box)({
-  width: '100%'
+  height: 'auto'
 });
